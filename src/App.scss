@@ -11,3 +11,14 @@
 body {
     height: 100vh;
 }
+
+// SIDEBAR STYLES
+
+.sidebar::-webkit-scrollbar {
+    width: 2px;
+    background-color: var(--grey);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--bright-green);
+}
