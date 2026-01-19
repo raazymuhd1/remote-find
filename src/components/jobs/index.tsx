@@ -37,10 +37,10 @@ const Jobs = () => {
       {/* job details modal */}
       <div 
         onClick={() => setShowDetails(false)}
-        className={`fixed inset-0 ${showDetails ? "opacity-[1] h-screen w-screen job_details" : "w-0 h-0 opacity-[0]"} transition-[position,height,width,2s,ease-in-out]`}>
+        className={`fixed inset-0 ${showDetails ? "opacity-[1] h-screen w-screen job_details" : "w-0 h-0 opacity-[0]"} delay-200 transition-[position,height,width,right,opacity,3s,ease-in-out]`}>
          <aside 
           onClick={(e) => e.stopPropagation()}
-          className='absolute right-0 bg-(--white) h-full md:w-[30%] w-[50%] p-[1.5rem] rounded-[10px]'>
+          className='absolute right-0 bg-(--white) h-full lg:w-[30%] md:w-[40%] w-[50%] p-[1.5rem] rounded-[10px]'>
            <JobDetails />
          </aside>
       </div>
