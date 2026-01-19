@@ -14,6 +14,11 @@ body {
     height: 100vh;
 }
 
+// NAVBAR STYLES
+.mobile_links {
+    @extend .glass_bg;
+}
+
 // SIDEBAR STYLES
 
 .sidebar::-webkit-scrollbar {
@@ -23,6 +28,10 @@ body {
 
 .sidebar::-webkit-scrollbar-thumb {
     background-color: var(--bright-green);
+}
+
+.filter_triggers {
+    @extend .green_glass_bg;
 }
 
 .sidebar_mobile {
