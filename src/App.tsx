@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className='w-full h-[85vh] flex'>
+      <main className='w-full h-[90vh] flex'>
       {/* sidebar */}
       <Sidebar />
       <Routes>
