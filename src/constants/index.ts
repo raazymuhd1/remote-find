@@ -26,6 +26,7 @@ const filter = {
     { id: 1, value: "$1k-$2k" },
     { id: 2, value: "$3k-$4k" },
     { id: 3, value: "$5k-$6k" },
+    { id: 4, value: "Custom" },
     ],
     roles: [
         { id: 1, title: "Product Designer" },
