@@ -8,7 +8,7 @@ const Jobs = () => {
     const [jobs, setJobs] = useState('')
 
   return (
-    <section className='w-[80%] bg-(--light-white) p-[1.3rem]'>
+    <section className='md:w-[80%] w-full bg-(--light-white) p-[1.3rem]'>
       {/* BANNER */}
       <section className='flex flex-col gap-[1rem]'>
           <div className='bg-(--bright-green) flex flex-col gap-[2rem] p-[15px] w-full rounded-[15px]'>

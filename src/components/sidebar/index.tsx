@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { MapPin, Check } from "lucide-react"
 import { filter } from '../../constants'
 
-const Sidebar = () => {
+interface IProps {
+    isMobileScreen: boolean;
+}
+
+const Sidebar = ({isMobileScreen}: IProps) => {
     const [salaryRange, setSalaryRange] = useState("");
     const [customSalary, setCustomSalary] = useState(false);
     const [position, setPosition] = useState("");
@@ -10,7 +14,9 @@ const Sidebar = () => {
     const [roles, setRoles] = useState("");
 
   return (
-    <aside className='w-[20%] sidebar h-full sticky inset-0 overflow-y-auto flex flex-col gap-5 p-[1.5rem] border-r-[1px] border-r-(--grey)'>
+    <aside 
+        onClick={e => e.stopPropagation()}
+        className={`w-[50%] md:w-[20%] sidebar h-full sticky inset-0 overflow-y-auto bg-(--white) flex-col ${isMobileScreen ? "md:hidden flex" : "md:flex hidden"} gap-5 p-[1.5rem] border-r-[1px] border-r-(--grey)`}>
         <div className='w-full flex items-center justify-between border-b-[1px] border-b-(--border-col) pb-[.7rem]'>
             <h3 className='text-[clamp(1rem,1.3vmax,1.3rem)] font-bold'> Filter </h3>
             <strong className='text-[red] cursor-pointer text-[clamp(.8rem,1vmax,1rem)]'> Reset </strong>

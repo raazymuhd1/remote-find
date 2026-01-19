@@ -1,4 +1,5 @@
 @use "styles/_colors" as cols;
+@use "styles/glass";
 
 :root {
     --white: #fffeff;
@@ -24,10 +25,12 @@ body {
     background-color: var(--bright-green);
 }
 
+.sidebar_mobile {
+    @extend .glass_bg;
+}
+
 
 // JOB DETAILS
 .job_details {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    @extend .glass_bg;
 }
