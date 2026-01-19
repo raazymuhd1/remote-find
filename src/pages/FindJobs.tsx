@@ -1,8 +1,8 @@
-import React from 'react'
+import { Jobs } from "../components"
 
 const FindJobs = () => {
   return (
-    <div>FindJobs</div>
+    <Jobs />
   )
 }
 

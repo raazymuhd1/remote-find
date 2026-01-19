@@ -13,7 +13,7 @@ const Sidebar = () => {
     <aside className='w-[20%] sidebar h-full sticky inset-0 overflow-y-auto flex flex-col gap-5 p-[1.5rem] border-r-[1px] border-r-(--grey)'>
         <div className='w-full flex items-center justify-between border-b-[1px] border-b-(--border-col) pb-[.7rem]'>
             <h3 className='text-[clamp(1rem,1.3vmax,1.3rem)] font-bold'> Filter </h3>
-            <strong className='text-[red] text-[clamp(.8rem,1vmax,1rem)]'> Reset </strong>
+            <strong className='text-[red] cursor-pointer text-[clamp(.8rem,1vmax,1rem)]'> Reset </strong>
         </div>
 
         {/* location */}
