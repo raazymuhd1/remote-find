@@ -1,7 +1,11 @@
 import { Bookmark, Check } from "lucide-react"
 import { apple } from "../../assets"
 
-const JobCard = () => {
+interface IProps {
+    setShowDetails: (status: boolean) => void;
+}
+
+const JobCard = ({ setShowDetails }: IProps) => {
   return (
     <section className={`p-[20px] w-[250px] flex flex-col gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--bright-green) cursor-pointer bg-(--white)`}>
         <div className='flex items-center w-full justify-between'>
@@ -38,7 +42,9 @@ const JobCard = () => {
               <p className="text-(--grey)"> Jakarta, ID </p>
             </aside>
 
-            <aside className="border-[1px] border-(--bright-green) p-[5px] rounded-[.7rem] hover:bg-(--bright-green) transition-[background,1s,ease-in-out]">
+            <aside 
+                onClick={() => setShowDetails(true)}
+                className="border-[1px] border-(--bright-green) p-[5px] rounded-[.7rem] hover:bg-(--bright-green) transition-[background,1s,ease-in-out]">
                 <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-semibold text-(--bright-green) hover:text-(--white)"> Details </h4>
             </aside>
         </div>

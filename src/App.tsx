@@ -9,11 +9,13 @@ function App() {
     <>
       <Header />
       <main className='w-full h-[90vh] flex'>
-      {/* sidebar */}
-      <Sidebar />
-      <Routes>
-        <Route path='/' index={true} element={<FindJobs />} />
-      </Routes>
+        {/* sidebar */}
+        <Sidebar />
+        <Routes>
+          <Route path='/' index={true} element={<FindJobs />} />
+        </Routes>
+
+        {/*  */}
       </main>
     </>
   )

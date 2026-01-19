@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import { Search, ArrowRight } from 'lucide-react'
 import JobCard from './JobCard'
+import JobDetails from './JobDetails'
 
 const Jobs = () => {
+    const [showDetails, setShowDetails] = useState(false)
+    const [jobs, setJobs] = useState('')
+
   return (
     <section className='w-[80%] bg-(--light-white) p-[1.3rem]'>
       {/* BANNER */}
@@ -26,8 +31,19 @@ const Jobs = () => {
 
       {/* jobs card */}
       <article className='mt-[1rem] w-full overflow-y-auto p-[1rem]'>
-        <JobCard />
+        <JobCard setShowDetails={setShowDetails} />
       </article>
+
+      {/* job details modal */}
+      <div 
+        onClick={() => setShowDetails(false)}
+        className={`fixed inset-0 ${showDetails ? "opacity-[1] h-screen w-screen job_details" : "w-0 h-0 opacity-[0]"} transition-[position,height,width,2s,ease-in-out]`}>
+         <aside 
+          onClick={(e) => e.stopPropagation()}
+          className='absolute right-0 bg-(--white) h-full md:w-[30%] w-[50%] p-[1.5rem] rounded-[10px]'>
+           <JobDetails />
+         </aside>
+      </div>
     </section>
   )
 }
