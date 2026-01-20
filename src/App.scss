@@ -1,13 +1,15 @@
-@use "styles/_colors" as cols;
+@use "styles/colors" as cols;
 @use "styles/glass";
 
 :root {
     --white: #fffeff;
     --bright-green: #00ae79;
+    --light-green: #58cc02;
     --blue-check: #0e4db8;
     --light-white: rgba(245, 244, 244);
     --border-col: var(--grey);
     --grey: #797978;
+    --dark-grey: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -27,7 +29,7 @@ body {
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background-color: var(--bright-green);
+    background-color: var(--light-green);
 }
 
 .filter_triggers {
@@ -42,4 +44,10 @@ body {
 // JOB DETAILS
 .job_details {
     @extend .glass_bg;
+}
+
+
+// AUTH styles
+.auth_shadows {
+    box-shadow: 2px 2px 96px 4px var(--dark-grey), -2px -2px 96px 4px var(--dark-grey);
 }

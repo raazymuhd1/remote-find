@@ -7,11 +7,11 @@ interface IProps {
 
 const JobCard = ({ setShowDetails }: IProps) => {
   return (
-    <section className={`p-[20px] max-w-[250px] flex flex-col gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--bright-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
+    <section className={`p-[20px] max-w-[250px] flex flex-col gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--light-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
         <div className='flex items-center w-full justify-between'>
             {/* company logo */}
             <img src={apple} alt="company-logo" className="rounded-[50%] w-[clamp(1.3rem,1.9vmax,1.9rem)] object-cover h-[clamp(1.3rem,1.9vmax,1.9rem)]" />
-            <aside className="p-[5px] transition-[background,1s,ease-in-out] hover:bg-(--bright-green) rounded-[10px] cursor-pointer w-max">
+            <aside className="p-[5px] transition-[background,1s,ease-in-out] hover:bg-(--light-green) rounded-[10px] cursor-pointer w-max">
                 <Bookmark className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)]" />
             </aside>
         </div>
@@ -44,8 +44,8 @@ const JobCard = ({ setShowDetails }: IProps) => {
 
             <aside 
                 onClick={() => setShowDetails(true)}
-                className="border-[1px] border-(--bright-green) p-[5px] rounded-[.7rem] hover:bg-(--bright-green) transition-[background,1s,ease-in-out]">
-                <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-semibold text-(--bright-green) hover:text-(--white)"> Details </h4>
+                className="border-[1px] border-(--light-green) p-[5px] rounded-[.7rem] hover:bg-(--light-green) transition-[background,1s,ease-in-out]">
+                <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-semibold text-(--light-green) hover:text-(--white)"> Details </h4>
             </aside>
         </div>
     </section>

@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className='w-full h-full flex items-center justify-between'>
         <aside className=''>
-            <h2 className='text-[clamp(1.4rem,2vmax,2rem)] text-(--bright-green) font-extrabold'> RemoteFind </h2>
+            <h2 className='text-[clamp(1.4rem,2vmax,2rem)] text-(--light-green) font-extrabold'> RemoteFind </h2>
         </aside>
 
         {/* links (desktop size) */}
@@ -21,7 +21,7 @@ const Navbar = () => {
             <ul className='md:flex hidden gap-[20px]'>
                 { links.map(link => (
                     <Link to={link.url} 
-                        className={`text-[clamp(1rem,1.1vmax,1.2rem)] py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--bright-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--bright-green) font-semibold`}>
+                        className={`text-[clamp(1rem,1.1vmax,1.2rem)] py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--light-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--light-green) font-semibold`}>
                         { link.title }
                     </Link>
                 )) }
@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <div 
           onClick={() => setShowMobileMenu(true)}
-          className='w-max md:hidden p-[10px] bg-(--bright-green) flex justify-center cursor-pointer sticky top-0 rounded-[.5rem]'>
+          className='w-max md:hidden p-[10px] bg-(--light-green) flex justify-center cursor-pointer sticky top-0 rounded-[.5rem]'>
           <Menu className='w-[clamp(1.3rem,1.8vmax,1.8rem)] h-[clamp(1.3rem,1.8vmax,1.8rem)] text-(--white)' />
         </div>
         
@@ -53,7 +53,7 @@ const Navbar = () => {
                 <ul className='flex w-full flex-col items-center gap-[20px]'>
                     { links.map(link => (
                         <Link to={link.url} 
-                            className={`text-[clamp(1rem,1.1vmax,1.2rem)] w-full py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--bright-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--bright-green) font-semibold`}>
+                            className={`text-[clamp(1rem,1.1vmax,1.2rem)] w-full py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--light-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--light-green) font-semibold`}>
                             { link.title }
                         </Link>
                     )) }

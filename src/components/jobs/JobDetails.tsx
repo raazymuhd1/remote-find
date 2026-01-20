@@ -20,7 +20,7 @@ const JobDetails = () => {
             <img src={apple} alt="company-logo" className='object-cover w-[clamp(2rem,2.8vmax,2.8rem)] h-[clamp(2rem,2.8vmax,2.8rem)] rounded-[50%]' />
             <aside className='flex flex-col'>
                 <h3 className='text-[clamp(1rem,1.3vmax,1.3rem)] font-bold tracking-[1px]'> Frontend Developer </h3>
-                <strong className='text-(--bright-green) text-[clamp(.8rem,1vmax,1rem)] tracking-[1px]'> Apple </strong>
+                <strong className='text-(--light-green) text-[clamp(.8rem,1vmax,1rem)] tracking-[1px]'> Apple </strong>
             </aside>
         </aside>
 
@@ -39,15 +39,15 @@ const JobDetails = () => {
         
         <div className='w-full flex flex-col'>
             <h4 className='text-[.8rem,1max,1rem] font-semibold tracking-[1px]'> posted 4 days ago </h4>
-            <p className='text-(--bright-green) text-[clamp(.6rem,.8vmax,.8rem)] font-semibold tracking-[1px]'> Other job from this company </p>
+            <p className='text-(--light-green) text-[clamp(.6rem,.8vmax,.8rem)] font-semibold tracking-[1px]'> Other job from this company </p>
         </div>
 
         <div className='w-full flex gap-[15px] items-center'>
-            <button className='px-[10px] py-[5px] rounded-[10px] bg-(--bright-green) text-(--white) border-0 w-[50%] tracking-[1px]'> Apply Now </button>
+            <button className='px-[10px] py-[5px] rounded-[10px] bg-(--light-green) text-(--white) border-0 w-[50%] tracking-[1px]'> Apply Now </button>
              <div className='rounded-[10px] p-[5px] border-[1px] border-(--bright-green) hover:bg-(--bright-green) transition-[background,1s,ease-in-out]'>
-                 <Bookmark className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--bright-green)" />
+                 <Bookmark className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--light-green)" />
              </div>
-            <MessageSquareShare className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--bright-green)" />
+            <MessageSquareShare className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--light-green)" />
         </div>
 
         {/* more details */}

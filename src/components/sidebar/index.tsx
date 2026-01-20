@@ -40,7 +40,7 @@ const Sidebar = ({isMobileScreen}: IProps) => {
             <div className='w-[80%] flex flex-wrap gap-y-[.7rem] gap-x-[1.5rem]'>
                 { filter.jobLocation.map(location => (
                     <div key={location.id} className='flex items-center gap-[5px]'>
-                        <aside className={`w-max h-max bg-(--bright-green) rounded-[5px] p-[3px]`}>
+                        <aside className={`w-max h-max bg-(--light-green) rounded-[5px] p-[3px]`}>
                         <Check className='w-[clamp(.8rem,1vmax,1rem)] h-[clamp(.8rem,1vmax,1rem)] text-(--white)' />
                         </aside>
                         <p className='text-[clamp(.8rem,1vmax,1rem)]'> {location.title} </p>
@@ -55,7 +55,7 @@ const Sidebar = ({isMobileScreen}: IProps) => {
             <div className='w-[80%] flex flex-wrap gap-y-[.7rem] gap-x-[1.5rem]'>
                 { filter.jobTypes.map(type => (
                     <div key={type.id} className='flex items-center gap-[5px]'>
-                        <aside className={`w-max h-max bg-(--bright-green) rounded-[5px] p-[3px]`}>
+                        <aside className={`w-max h-max bg-(--light-green) rounded-[5px] p-[3px]`}>
                              <Check className='w-[clamp(.8rem,1vmax,1rem)] h-[clamp(.8rem,1vmax,1rem)] text-(--white)' />
                         </aside>
                         <p className='text-[clamp(.8rem,1vmax,1rem)]'> {type.title} </p>
@@ -71,7 +71,7 @@ const Sidebar = ({isMobileScreen}: IProps) => {
               <div className='w-[80%] flex flex-wrap gap-y-[.7rem] gap-x-[1.5rem]'>
                 { filter.salaryRange.map(salary => (
                     <div key={salary.id} className='flex items-center gap-[5px]'>
-                        <aside className={`w-max h-max bg-(--bright-green) rounded-[5px] p-[3px]`}>
+                        <aside className={`w-max h-max bg-(--light-green) rounded-[5px] p-[3px]`}>
                              <Check className='w-[clamp(.8rem,1vmax,1rem)] h-[clamp(.8rem,1vmax,1rem)] text-(--white)' />
                         </aside>
                         <p className='text-[clamp(.8rem,1vmax,1rem)]'> {salary.value} </p>
@@ -88,7 +88,7 @@ const Sidebar = ({isMobileScreen}: IProps) => {
             <div className='w-[50%] flex flex-wrap gap-y-[.3rem] gap-x-[1.1rem]'>
                 { filter.roles.map(role => (
                     <div key={role.id} className='flex items-center gap-[5px]'>
-                        <aside className={`w-max h-max bg-(--bright-green) rounded-[5px] p-[3px]`}>
+                        <aside className={`w-max h-max bg-(--light-green) rounded-[5px] p-[3px]`}>
                         <Check className='w-[clamp(.8rem,1vmax,1rem)] h-[clamp(.8rem,1vmax,1rem)] text-(--white)' />
                         </aside>
                         <p className='text-[clamp(.8rem,1vmax,1rem)]'> {role.title} </p>
