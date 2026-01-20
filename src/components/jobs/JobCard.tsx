@@ -7,7 +7,7 @@ interface IProps {
 
 const JobCard = ({ setShowDetails }: IProps) => {
   return (
-    <section className={`p-[20px] w-[250px] flex flex-col gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--bright-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
+    <section className={`p-[20px] max-w-[250px] flex flex-col gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--bright-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
         <div className='flex items-center w-full justify-between'>
             {/* company logo */}
             <img src={apple} alt="company-logo" className="rounded-[50%] w-[clamp(1.3rem,1.9vmax,1.9rem)] object-cover h-[clamp(1.3rem,1.9vmax,1.9rem)]" />

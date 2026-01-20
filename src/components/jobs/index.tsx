@@ -8,7 +8,7 @@ const Jobs = () => {
     const [jobs, setJobs] = useState('')
 
   return (
-    <section className='md:w-[80%] h-[90vh] overflow-y-auto w-full bg-(--light-white) p-[1.3rem]'>
+    <section className='md:w-[85%] h-[90vh] overflow-y-auto w-full bg-(--light-white) md:p-[1.3rem] p-[.5rem]'>
       {/* BANNER */}
       <section className='flex flex-col gap-[1rem]'>
           <div className='bg-(--bright-green) flex flex-col gap-[2rem] p-[15px] w-full rounded-[15px]'>
@@ -30,7 +30,7 @@ const Jobs = () => {
 
 
       {/* jobs card */}
-      <article className='mt-[1rem] w-full overflow-y-auto p-[1rem]'>
+      <article className='mt-[1rem] w-full overflow-y-auto md:p-[1rem] p-[.5rem]'>
         <JobCard setShowDetails={setShowDetails} />
       </article>
 
@@ -40,7 +40,7 @@ const Jobs = () => {
         className={`fixed inset-0 ${showDetails ? "opacity-[1] h-screen w-screen job_details" : "w-0 h-0 opacity-[0]"} delay-200 transition-[position,height,width,right,opacity,3s,ease-in-out]`}>
          <aside 
           onClick={(e) => e.stopPropagation()}
-          className='absolute right-0 bg-(--white) h-full lg:w-[30%] md:w-[40%] w-[50%] p-[1.5rem] rounded-[10px]'>
+          className='absolute right-0 bg-(--white) h-full lg:w-[30%] md:w-[40%] w-[80%] p-[1.5rem] rounded-[10px]'>
            <JobDetails />
          </aside>
       </div>

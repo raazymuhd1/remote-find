@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MapPin, Check } from "lucide-react"
 import { filter } from '../../constants'
-
+import { useLocation } from 'react-router'
 interface IProps {
     isMobileScreen: boolean;
 }
@@ -12,22 +12,25 @@ const Sidebar = ({isMobileScreen}: IProps) => {
     const [position, setPosition] = useState("");
     const [type, setType] = useState("");
     const [roles, setRoles] = useState("");
+    const location = useLocation()
+
+    console.log(`location ${location.pathname}`)
 
   return (
     <aside 
         onClick={e => e.stopPropagation()}
-        className={`w-[50%] md:w-[20%] sidebar h-full sticky inset-0 overflow-y-auto bg-(--white) flex-col ${isMobileScreen ? "md:hidden flex" : "md:flex hidden"} gap-5 p-[1.5rem] border-r-[1px] border-r-(--grey)`}>
+        className={`w-[70%] ${location.pathname == "/auth/signup" && "hidden"} lg:w-[15%] md:w-[25%] sidebar h-full sticky inset-0 overflow-y-auto bg-(--white) flex-col ${isMobileScreen ? "md:hidden flex" : "md:flex hidden"} gap-5 p-[1.5rem] border-r-[1px] border-r-(--grey)`}>
         <div className='w-full flex items-center justify-between border-b-[1px] border-b-(--border-col) pb-[.7rem]'>
             <h3 className='text-[clamp(1rem,1.3vmax,1.3rem)] font-bold'> Filter </h3>
             <strong className='text-[red] cursor-pointer text-[clamp(.8rem,1vmax,1rem)]'> Reset </strong>
         </div>
 
         {/* location */}
-        <div className='flex w-[80%] flex-col gap-[10px]'>
+        <div className='flex md:w-[80%] w-full flex-col gap-[10px]'>
             <h4 className='font-semibold text-[clamp(.8rem,1.1vmax,1.1rem)]'>Job Location</h4>
-            <div className='flex w-full items-center justify-center border-[1px] border-(--border-col) rounded-[10px] gap-[5px]'>
-                <MapPin className='w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--grey)' />
-                <input type="text" className='placeholder:text-(--grey) w-[80%] p-[5px] h-full focus:outline-0' placeholder='Jakarta, Indonesia' />
+            <div className='flex w-full items-center justify-center border-[1px] border-(--border-col) rounded-[10px] md:gap-[5px]'>
+                <MapPin className='w-[clamp(.8rem,1.2vmax,1.2rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--grey) translate-y-[3px]' />
+                <input type="text" className='placeholder:text-(--grey) md:w-[80%] w-full p-[5px] h-full focus:outline-0 placeholder:text-[clamp(.7rem,.9vmax,.9rem)]' placeholder='Jakarta, Indonesia' />
             </div>
         </div>
 
