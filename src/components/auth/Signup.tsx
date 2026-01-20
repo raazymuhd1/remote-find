@@ -4,10 +4,10 @@ import TextField from './TextField'
 const Signup = () => {
   return (
     <section className='h-screen w-screen flex flex-col justify-center bg-(--light-white)'>
-        <div className='flex flex-col gap-[1rem] auth_shadows lg:w-[30%] md:w-[40%] w-[80%] mx-auto min-h-[50%] bg-(--white) rounded-[1.3rem] p-[1.2rem]'>
+        <div className='flex flex-col gap-[1rem] auth_shadows lg:w-[30%] md:w-[50%] w-[70%] mx-auto min-h-[50%] bg-(--white) rounded-[1.3rem] p-[1.2rem]'>
             <article className='flex flex-col items-center gap-[1.3rem]'>
                 <div className='flex flex-col items-center gap-[1rem] w-full'>
-                    <h1 className='font-extrabold text-[clamp(1.1rem,2vmax,2rem)] text-(--light-green)'> RemoteFind </h1>
+                    <h1 className='font-extrabold text-[clamp(1.5rem,2vmax,2rem)] text-(--light-green)'> RemoteFind </h1>
                     <h2 className='text-center text-[clamp(1.3rem,1.7vmax,1.7rem)] font-bold'> Get more opportunities </h2>
                 </div>
                 <div className='flex items-center rounded-[10px] bg-(--light-white) py-[5px] px-[10px] gap-[10px] cursor-pointer'>

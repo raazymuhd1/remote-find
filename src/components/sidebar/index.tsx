@@ -14,8 +14,6 @@ const Sidebar = ({isMobileScreen}: IProps) => {
     const [roles, setRoles] = useState("");
     const location = useLocation()
 
-    console.log(`location ${location.pathname}`)
-
   return (
     <aside 
         onClick={e => e.stopPropagation()}
