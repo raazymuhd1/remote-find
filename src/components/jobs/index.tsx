@@ -5,7 +5,7 @@ import JobDetails from './JobDetails'
 
 const Jobs = () => {
     const [showDetails, setShowDetails] = useState(false)
-    const [jobs, setJobs] = useState('')
+    // const [jobs, setJobs] = useState('')
 
   return (
     <section className='md:w-[85%] h-[90vh] overflow-y-auto w-full bg-(--light-white) md:p-[1.3rem] p-[.5rem]'>

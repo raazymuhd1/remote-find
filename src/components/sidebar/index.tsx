@@ -7,11 +7,11 @@ interface IProps {
 }
 
 const Sidebar = ({isMobileScreen}: IProps) => {
-    const [salaryRange, setSalaryRange] = useState("");
-    const [customSalary, setCustomSalary] = useState(false);
-    const [position, setPosition] = useState("");
-    const [type, setType] = useState("");
-    const [roles, setRoles] = useState("");
+    // const [salaryRange, setSalaryRange] = useState("");
+    const [customSalary, ] = useState(false);
+    // const [position, setPosition] = useState("");
+    // const [type, setType] = useState("");
+    // const [roles, setRoles] = useState("");
     const location = useLocation()
 
   return (

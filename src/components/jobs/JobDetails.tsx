@@ -1,4 +1,3 @@
-import React from 'react'
 import { apple } from '../../assets'
 import { Bookmark, MessageSquareShare, MapPin, BriefcaseBusiness, Building, CreditCard } from 'lucide-react'
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface IProps {
     htmlFor: string;
     placeholder: string;
