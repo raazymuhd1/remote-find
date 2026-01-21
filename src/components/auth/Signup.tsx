@@ -30,7 +30,7 @@ const Signup = () => {
             </article>
 
             <article className="w-full flex flex-col items-center gap-[.7rem]">
-                <button className='font-semibold w-full py-[5px] px-[10px] rounded-[1rem] bg-(--light-green) text-(--white)'> Sign Up </button>
+                <button className='font-semibold w-full py-[5px] px-[10px] rounded-[1rem] bg-(--light-green) text-(--white) cursor-pointer hover:opacity-[.7] transition-[opacity,2s,ease-in-out] delay-100'> Sign Up </button>
                 <p className='underline italic text-(--grey) cursor-pointer text-[clamp(.6rem,.8vmax,.8rem)]'> Already have an account? Login instead! </p>
             </article>
         </div>
