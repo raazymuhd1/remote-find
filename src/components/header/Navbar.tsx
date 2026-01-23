@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <div 
           onClick={() => setShowMobileMenu(true)}
-          className='w-max md:hidden p-[10px] bg-(--light-green) flex justify-center cursor-pointer sticky top-0 rounded-[.5rem]'>
+          className='w-max md:hidden p-[5px] bg-(--light-green) flex justify-center cursor-pointer sticky top-0 rounded-[.5rem]'>
           <Menu className='w-[clamp(1.3rem,1.8vmax,1.8rem)] h-[clamp(1.3rem,1.8vmax,1.8rem)] text-(--white)' />
         </div>
         
@@ -52,7 +52,9 @@ const Navbar = () => {
                 className='w-full h-[30%] bg-(--white) flex gap-[1rem] flex-col-reverse items-center justify-center rounded-bl-[10px] rounded-br-[10px]'>
                 <ul className='flex w-full flex-col items-center gap-[20px]'>
                     { links.map(link => (
-                        <Link to={link.url} 
+                        <Link 
+                            onClick={() => setShowMobileMenu(false)}
+                            to={link.url} 
                             className={`text-[clamp(1rem,1.1vmax,1.2rem)] w-full py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--light-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--light-green) font-semibold`}>
                             { link.title }
                         </Link>
