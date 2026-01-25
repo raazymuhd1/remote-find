@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Header, Sidebar } from './components'
-import { FindJobs, UploadJobs, Auth } from './pages'
+import { FindJobs, UploadJobs, Auth, UserProfile } from './pages'
 import { ListFilterPlus } from 'lucide-react'
 import { Routes, Route } from 'react-router'
 import './App.scss'
@@ -32,6 +32,7 @@ function App() {
           <Route path='/auth/:type' element={<Auth />} />
           <Route path='/' index={true} element={<FindJobs />} />
           <Route path='/upload-jobs' element={<UploadJobs />} />
+          <Route path='/user/profile' element={<UserProfile />} />
         </Routes>
 
         {/*  */}

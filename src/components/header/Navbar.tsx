@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import { Bell, ChevronDown, ChevronUp, Menu } from 'lucide-react'
 import { profile } from '../../assets'
 import { useLocation  } from 'react-router'
+import ProfileModal from "./ProfileModal"
 
 const Navbar = () => {
     const location = useLocation()
@@ -28,18 +29,20 @@ const Navbar = () => {
             </ul>
 
             <aside className='md:flex hidden gap-[10px] items-center'>
-                <Bell className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)] ' />
+                <Bell className='w-[clamp(1.3rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)] ' />
                 <div 
-                    onMouseDown={() => setShowProfileModal(true)}
-                    className='flex items-center gap-[5px] cursor-pointer'>
+                    onMouseDown={() => setShowProfileModal(!showProfileModal)}
+                    className='flex items-center gap-[5px] cursor-pointer relative'>
                     <img src={profile} alt="profile" className='object-cover w-[clamp(1.2rem,2vmax,2rem)] h-[clamp(1.2rem,2vmax,2rem)] rounded-[50%]' />
                     {
                         showProfileModal 
                         ? 
-                        <ChevronUp className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)]' />
+                        <ChevronUp className='w-[clamp(1.3rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)]' />
                         :
-                        <ChevronDown className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)]' />
+                        <ChevronDown className='w-[clamp(1.3rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)]' />
                     }
+
+                    <ProfileModal showProfile={showProfileModal} setShowProfile={setShowProfileModal} />
                 </div>
             </aside>
 
