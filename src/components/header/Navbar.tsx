@@ -1,14 +1,14 @@
 import { useState } from "react"
 import { links } from '../../constants'
 import { Link } from 'react-router'
-import { Bell, ChevronDown, Menu } from 'lucide-react'
+import { Bell, ChevronDown, ChevronUp, Menu } from 'lucide-react'
 import { profile } from '../../assets'
 import { useLocation  } from 'react-router'
 
 const Navbar = () => {
     const location = useLocation()
     const [showMobileMenu, setShowMobileMenu] = useState(false)
-
+    const [showProfileModal, setShowProfileModal] = useState(false)
 
   return (
     <nav className='w-full h-full flex items-center justify-between'>
@@ -29,9 +29,17 @@ const Navbar = () => {
 
             <aside className='md:flex hidden gap-[10px] items-center'>
                 <Bell className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)] ' />
-                <div className='flex items-center gap-[5px]'>
+                <div 
+                    onMouseDown={() => setShowProfileModal(true)}
+                    className='flex items-center gap-[5px] cursor-pointer'>
                     <img src={profile} alt="profile" className='object-cover w-[clamp(1.2rem,2vmax,2rem)] h-[clamp(1.2rem,2vmax,2rem)] rounded-[50%]' />
-                    <ChevronDown className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)] ' />
+                    {
+                        showProfileModal 
+                        ? 
+                        <ChevronUp className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)]' />
+                        :
+                        <ChevronDown className='w-[clamp(1.3rem,2vmax,2rem)] h-[clamp(1.3rem,2vmax,2rem)]' />
+                    }
                 </div>
             </aside>
 
@@ -65,7 +73,7 @@ const Navbar = () => {
                     <Bell className='w-[clamp(1.7rem,2vmax,2rem)] h-[clamp(1.7rem,2vmax,2rem)] ' />
                     <div className='flex items-center gap-[5px]'>
                         <img src={profile} alt="profile" className='object-cover w-[clamp(2rem,2vmax,2rem)] h-[clamp(2rem,2vmax,2rem)] rounded-[50%]' />
-                        <ChevronDown className='w-[clamp(1.7rem,2vmax,2rem)] h-[clamp(1.7rem,2vmax,2rem)] ' />
+                        <ChevronDown className='w-[clamp(1.7rem,2vmax,2rem)] h-[clamp(1.7rem,2vmax,2rem)] cursor-pointer' />
                     </div>
                 </aside>
             </aside>
