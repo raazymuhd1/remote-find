@@ -4,4 +4,40 @@ type Link = {
     url: string;
 }
 
-export type { Link }
+type Job = {
+    id: number;
+    companyName: string;
+    companyPicture: string;
+    role: string;
+    requirements: string[];
+    responsibilities: string[];
+    description: string;
+    detail: JobDetail;
+    createdAt: Date;
+    authorId: number;
+}
+
+interface JobDetail {
+    id: number;
+    location: string;
+    position: string;
+    type: string;
+    salaryRange: string;
+    jobId: string;
+}
+
+type User = {
+    id: number;
+    username: string;
+    email: string;
+    password: string;
+    picture: string;
+    jobs?: Job[];
+}
+
+export type { 
+    Link,
+    Job,
+    JobDetail,
+    User
+}
