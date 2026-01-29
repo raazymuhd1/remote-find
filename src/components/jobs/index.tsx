@@ -38,11 +38,7 @@ const Jobs = () => {
       <div 
         onClick={() => setShowDetails(false)}
         className={`fixed inset-0 ${showDetails ? "opacity-[1] h-screen w-screen job_details" : "w-0 h-0 opacity-[0]"} delay-200 transition-[position,height,width,right,opacity,3s,ease-in-out] z-[10]`}>
-         <aside 
-          onClick={(e) => e.stopPropagation()}
-          className='absolute right-0 bg-(--white) h-full lg:w-[30%] md:w-[40%] w-[80%] p-[1.5rem] rounded-[10px]'>
            <JobDetails />
-         </aside>
       </div>
     </section>
   )

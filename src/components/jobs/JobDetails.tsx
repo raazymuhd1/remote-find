@@ -13,7 +13,9 @@ const dummyJobsDetail = [
 
 const JobDetails = () => {
   return (
-    <section className='flex flex-col gap-[1rem]'>
+    <section
+        onClick={(e) => e.stopPropagation()} 
+        className='flex flex-col gap-[1rem] absolute right-0 bg-(--white) h-full lg:w-[30%] md:w-[40%] w-[80%] p-[1.5rem] rounded-[10px]'>
         {/* company & job title */}
         <aside className='flex w-full items-center gap-[10px]'>
             <img src={apple} alt="company-logo" className='object-cover w-[clamp(2rem,2.8vmax,2.8rem)] h-[clamp(2rem,2.8vmax,2.8rem)] rounded-[50%]' />
