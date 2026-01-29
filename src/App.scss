@@ -23,6 +23,24 @@ body {
     @extend .glass_bg;
 }
 
+// AUTH
+.auth_bg {
+    position: relative;
+    background: url("./assets/auth/find-work.jpg") no-repeat;
+    background-position: bottom 0 right 0 ;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.auth_bg::before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    inset: 0;
+    background-color: #504e4eb7;
+}
+
 // SIDEBAR STYLES
 
 .sidebar::-webkit-scrollbar {

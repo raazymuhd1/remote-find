@@ -29,7 +29,8 @@ function App() {
         </aside>
 
         <Routes>
-          <Route path='/auth/:type' element={<Auth />} />
+          <Route path='/auth/*' element={<Auth />} />
+          {/* <Route path='/auth/signin' element={<Auth />} /> */}
           <Route path='/' index={true} element={<FindJobs />} />
           <Route path='/upload-jobs' element={<UploadJobs />} />
           <Route path='/user/profile' element={<UserProfile />} />

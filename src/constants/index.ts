@@ -10,34 +10,34 @@ const links: Link[] = [
 ]
 
 // SIDEBAR DATA
-const filter = {
+const jobFilter = {
     jobLocation: [
-    { id: 1, title: "On Site" },
-    { id: 2, title: "Remote" },
-    { id: 3, title: "Hybrid" },
+    { id: 1, title: "On Site", isActive: true },
+    { id: 2, title: "Remote", isActive: false },
+    { id: 3, title: "Hybrid", isActive: false },
     ],
     jobTypes: [
-    { id: 1, title: "Fulltime" },
-    { id: 2, title: "Part time" },
-    { id: 3, title: "Freelance" },
-    { id: 4, title: "Contract" },
+    { id: 1, title: "Fulltime", isActive: true },
+    { id: 2, title: "Part time", isActive: false },
+    { id: 3, title: "Freelance", isActive: false },
+    { id: 4, title: "Contract", isActive: false },
     ],
     salaryRange: [
-    { id: 1, value: "$1k-$2k" },
-    { id: 2, value: "$3k-$4k" },
-    { id: 3, value: "$5k-$6k" },
-    { id: 4, value: "Custom" },
+    { id: 1, value: "$1k-$2k", isActive: true },
+    { id: 2, value: "$3k-$4k", isActive: false },
+    { id: 3, value: "$5k-$6k", isActive: false },
+    { id: 4, value: "Custom", isActive: false },
     ],
     roles: [
-        { id: 1, title: "Product Designer" },
-        { id: 2, title: "UI/UX Designer" },
-        { id: 3, title: "Web Designer" },
-        { id: 4, title: "Frontend Developer" },
-        { id: 5, title: "Fullstack Developer" },
+        { id: 1, title: "Product Designer", isActive: true },
+        { id: 2, title: "UI/UX Designer", isActive: false },
+        { id: 3, title: "Web Designer", isActive: false },
+        { id: 4, title: "Frontend Developer", isActive: false },
+        { id: 5, title: "Fullstack Developer", isActive: false },
     ]
 }
 
 export {
     links,
-    filter
+    jobFilter
 }
