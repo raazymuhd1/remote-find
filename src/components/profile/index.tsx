@@ -57,8 +57,8 @@ const Profile = () => {
               
               {/* buttons */}
               <aside className="flex flex-col gap-[.6rem] w-full">
-                  <button className="px-[10px] py-[3px] rounded-[10px] w-full bg-(--light-green) font-semibold text-(--white) cursor-pointer hover:opacity-[.7] transition-[opacity,1s,ease-in-out]"> Update </button>
-                  <button className="px-[10px] py-[3px] rounded-[10px] w-full bg-(--light-green) font-semibold text-(--white) cursor-pointer hover:opacity-[.7] transition-[opacity,1s,ease-in-out]"> Upload Resume </button>
+                  <button className="px-[10px] py-[3px] rounded-[10px] md:w-[150px] w-full bg-(--light-green) font-semibold text-(--white) cursor-pointer hover:opacity-[.7] transition-[opacity,1s,ease-in-out]"> Update </button>
+                  <button className="px-[10px] py-[3px] rounded-[10px] md:w-[150px] w-full bg-(--light-green) font-semibold text-(--white) cursor-pointer hover:opacity-[.7] transition-[opacity,1s,ease-in-out]"> Upload Resume </button>
               </aside>
 
            </article>
@@ -71,7 +71,7 @@ const Profile = () => {
         </aside>
 
         {/* profile jobs */}
-        <aside className="w-full flex flex-col gap-[1.4rem] md:w-[70%] p-[2rem] bg-(--white) overflow-x-auto rounded-[15px] md:h-full md:mt-0 mt-[2rem] h-[20rem] hover:border-(--light-green) border-[1px] border-(--white) transition-[border,1s,ease-in-out]">
+        <aside className="w-full flex flex-col gap-[1.4rem] md:w-[70%] p-[2rem] bg-(--white) overflow-x-auto rounded-[15px] md:h-full md:mt-0 mt-[.5rem] h-[30rem] hover:border-(--light-green) border-[1px] border-(--white) transition-[border,1s,ease-in-out]">
             <div className="flex w-full hover:translate-y-[-2px] transition-[all,1s,ease-in-out] cursor-pointer flex-col gap-[1rem] border-[1px] border-(--border-col) p-[.5rem] bg-(--light-white) rounded-[15px] hover:border-(--light-green)">
               {/* top detail */}
                 <div className="flex w-full justify-between">

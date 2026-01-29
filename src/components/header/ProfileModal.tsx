@@ -8,7 +8,9 @@ interface IProps {
 
 const ProfileModal = ({showProfile, setShowProfile}: IProps) => {
   return (
-    <section className={`absolute w-[150px] h-[150px] rounded-[10px] p-[.8rem] bg-(--white) transition-[display,position,2s,ease-in-out] flex top-[2rem] flex-col items-center gap-[1rem] ${showProfile ? "w-[150px] h-[150px] opacity-[1] translate-x-[-5rem]" : "h-0 w-0 translate-x-[5rem]"}`}>
+    <section 
+      onClick={(e) => e.stopPropagation()}
+      className={`absolute w-[150px] h-[150px] rounded-[10px] p-[.8rem] bg-(--white) transition-[display,position,2s,ease-in-out] flex top-[2rem] flex-col items-center gap-[1rem] ${showProfile ? "w-[150px] h-[150px] opacity-[1] translate-x-[-5rem]" : "h-0 w-0 translate-x-[5rem]"}`}>
         <X className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)]" />
         {/* links */}
         <Link

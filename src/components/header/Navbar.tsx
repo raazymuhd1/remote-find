@@ -13,9 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className='w-full h-full flex items-center justify-between'>
-        <aside className=''>
+        <Link to="/" className=''>
             <h2 className='text-[clamp(1.4rem,2vmax,2rem)] text-(--light-green) font-extrabold'> RemoteFind </h2>
-        </aside>
+        </Link>
 
         {/* links (desktop size) */}
         <aside className='w-[60%] flex items-center justify-between'>

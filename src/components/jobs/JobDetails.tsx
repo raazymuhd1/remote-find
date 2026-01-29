@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { apple } from '../../assets'
 import { Bookmark, MessageSquareShare, MapPin, BriefcaseBusiness, Building, CreditCard } from 'lucide-react'
 
@@ -12,6 +13,9 @@ const dummyJobsDetail = [
 ] 
 
 const JobDetails = () => {
+     const [applied, setApplied] = useState(false)
+     const [saved, setSaved] = useState(false)
+
   return (
     <section
         onClick={(e) => e.stopPropagation()} 
@@ -44,9 +48,14 @@ const JobDetails = () => {
         </div>
 
         <div className='w-full flex gap-[15px] items-center'>
-            <button className='px-[10px] py-[5px] rounded-[10px] bg-(--light-green) text-(--white) border-0 w-[50%] tracking-[1px] cursor-pointer hover:opacity-[.8] transition-[opacity,1s,ease-in-out]'> Apply Now </button>
-             <div className='rounded-[10px] p-[5px] border-[1px] border-(--bright-green) hover:bg-(--bright-green) transition-[background,1s,ease-in-out]'>
-                 <Bookmark className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--light-green)" />
+            <button 
+                onClick={() => setApplied(!applied)}
+                className={`px-[10px] py-[5px] rounded-[10px] bg-(--light-green) text-(--white) border-0 w-[50%] tracking-[1px] cursor-pointer hover:opacity-[.8] transition-[opacity,1s,ease-in-out] ${applied && "opacity-[.8]"}`}> { applied ? "Applied" : "Apply Now" } </button>
+             <div 
+                onClick={() => setSaved(!saved)}
+                className={`rounded-[10px] p-[5px] border-[1px] border-(--bright-green) hover:bg-(--light-green) transition-[background,1s,ease-in-out] cursor-pointer ${saved && "bg-(--light-green)"}`}>
+                 <Bookmark 
+                    className={`w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--light-green) ${saved && "text-(--white)"}`} />
              </div>
             <MessageSquareShare className="w-[clamp(1rem,1.4vmax,1.4rem)] h-[clamp(1rem,1.4vmax,1.4rem)] text-(--light-green)" />
         </div>
