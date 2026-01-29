@@ -29,7 +29,6 @@ body {
     background: url("./assets/auth/find-work.jpg") no-repeat;
     background-position: bottom 0 right 0 ;
     background-size: cover;
-    border-radius: 15px;
 }
 
 .auth_bg::before {
@@ -38,7 +37,7 @@ body {
     width: 100%;
     content: "";
     inset: 0;
-    background-color: #504e4eb7;
+    background-color: #504e4ed5;
 }
 
 // SIDEBAR STYLES

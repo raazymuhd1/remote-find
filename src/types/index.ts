@@ -35,9 +35,12 @@ type User = {
     jobs?: Job[];
 }
 
+type UserForm = Omit<User, "id" | "jobs" | "picture">
+
 export type { 
     Link,
     Job,
     JobDetail,
-    User
+    User,
+    UserForm
 }

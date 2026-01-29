@@ -2,11 +2,13 @@ import { useState } from 'react'
 import { Header, Sidebar } from './components'
 import { FindJobs, UploadJobs, Auth, UserProfile } from './pages'
 import { ListFilterPlus } from 'lucide-react'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, useLocation } from 'react-router'
 import './App.scss'
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(false)
+  const location = useLocation()
+
 
   return (
     <>
@@ -17,7 +19,7 @@ function App() {
         {/* sidebar triggers on mobile screen */}
         <div 
           onClick={() => setShowSidebar(true)}
-          className='w-full md:hidden p-[10px] filter_triggers flex justify-center cursor-pointer sticky top-0'>
+          className={`w-full md:hidden p-[10px] filter_triggers flex justify-center cursor-pointer sticky top-0 ${(location.pathname == "/auth/signin" || location.pathname == "/auth/signup" || location.pathname == "/user/profile") && "hidden"}`}>
           <ListFilterPlus className='w-[clamp(1.3rem,1.8vmax,1.8rem)] h-[clamp(1.3rem,1.8vmax,1.8rem)]' />
         </div>
 
