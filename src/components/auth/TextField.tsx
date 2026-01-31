@@ -28,7 +28,7 @@ const TextField = ({  htmlFor, placeholder, type, label, inputProps }: IProps) =
         <label htmlFor={htmlFor} className='font-semibold text-[clamp(.8rem,1vmax,1rem)]'> {label} </label>
         <input 
           type={type} id={htmlFor} 
-          {  ...inputProps.register(inputProps.inputLabel) }
+          {  ...inputProps.register(inputProps.inputLabel, inputProps.validation) }
           // value={value}
           // onChange={handleChange}
           placeholder={placeholder} 

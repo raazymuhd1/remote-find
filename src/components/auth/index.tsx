@@ -1,7 +1,7 @@
-import { useState } from 'react' 
+import { useEffect, useState } from 'react' 
 import { google } from '../../assets'
 import TextField from './TextField'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { useSigninMutation, useSignupMutation } from '../../redux/services/auth'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import type { UserForm } from '../../types'
@@ -9,27 +9,29 @@ import type { UserForm } from '../../types'
 const Signup = () => {
     const [signin, goSignin] = useState(false)
     const [signup, goSignup] = useState(true)
-    const { register, handleSubmit, formState: { errors, isSubmitted}, watch } = useForm<UserForm>()
+    const { register, handleSubmit, formState: { errors } } = useForm<UserForm>()
     const [ userSignup, signupRes] = useSignupMutation()
     const [userSignin, signinRes] = useSigninMutation()
-    // const [user, setUser] = useState<UserForm>({
-    //     username: "",
-    //     email: "",
-    //     password: ""
-    // })
-
-    const handleFormSubmit: SubmitHandler<UserForm> = (data: UserForm) => {
+    const navigate = useNavigate()
+  
+    const handleFormSubmit: SubmitHandler<UserForm> = async(data: UserForm) => {
        console.log(`data ${data.username}`)
+       try {
+           await userSignup(data).unwrap()
+       } catch(err) {
+          console.log(`something wrong`, err)
+       }
     }
 
-    // const handleInputChange = (e) => {
-    //     const val = e.target?.value
-    //     const name = e.target?.name;
+    useEffect(() => {
+        if(signupRes?.data) {
+            console.log(`data`, signupRes.data?.)
+            navigate("/")
+            return
+        }
 
-    //     setUser({
-    //         ...user, [name]: val
-    //     })
-    // }
+        console.log(`no signup data`)
+    }, [signupRes])
 
   return (
     <section className='auth_bg h-screen w-screen flex flex-col justify-center bg-(--light-white)'>
@@ -53,7 +55,7 @@ const Signup = () => {
                 </div>
             </article>
 
-            {/* INPUTS */}
+            {/* INPUTS FORM */}
             <form 
                 onSubmit={handleSubmit(handleFormSubmit)}
                 className='w-full flex flex-col gap-[1.3rem]'>
@@ -67,8 +69,6 @@ const Signup = () => {
                         }
                     }}
                     htmlFor='fullname' placeholder='Fullname' type="text" label='Fullname' 
-                    // value={user.username}
-                    // handleChange={handleInputChange}
                     />
                 }
                 <TextField 
@@ -80,13 +80,10 @@ const Signup = () => {
                         }
                     }}
                     htmlFor='email' placeholder='Email Address' type="email" label='Email Address' 
-                    // value={user.username}
-                    // handleChange={handleInputChange}
                 />
-                { errors.email && <p className='text-[red]'> this field required {errors.email.message} </p> }
                 <TextField 
                      inputProps={{
-                        inputLabel: "email",
+                        inputLabel: "password",
                         register,
                         validation: {
                             required: true,
@@ -95,11 +92,7 @@ const Signup = () => {
                         }
                     }}
                     htmlFor='password' placeholder='Password' type="password" label='Password' 
-                    // value={user.username}
-                    // handleChange={handleInputChange}
                 />
-
-                { errors.password && <p className='text-[red]'> this field required {errors.password.message} </p> }
 
                 <article className="w-full flex flex-col items-center gap-[.7rem]">
                     <button 

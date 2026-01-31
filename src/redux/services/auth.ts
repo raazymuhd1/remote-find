@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { User } from "../../types";
+import type { User, AuthResponse } from "../../types";
 
 interface UserAuthData {
     username: string;
@@ -13,14 +13,18 @@ export const authApi = createApi({
     reducerPath: "authApi",
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
-        signin:  builder.mutation<User, Omit<UserAuthData, "username">>({
+        signin:  builder.mutation<AuthResponse, Omit<UserAuthData, "username">>({
             query: (userData) => ({
                 url: "/signin",
                 method: "POST",
                 body: userData
-            })
+            }),
+            transformErrorResponse: (response) => {
+                console.log(`error response ${response.data}, status ${response.status}`)
+                return response.data
+            }
         }),
-        signup: builder.mutation<User, UserAuthData>({
+        signup: builder.mutation<AuthResponse, UserAuthData>({
             query: (userData) => ({
                 url: "/signup",
                 method: "POST",

@@ -37,10 +37,17 @@ type User = {
 
 type UserForm = Omit<User, "id" | "jobs" | "picture">
 
+type AuthResponse = {
+    user: User;
+    token: string;
+    msg?: string;
+}
+
 export type { 
     Link,
     Job,
     JobDetail,
     User,
-    UserForm
+    UserForm,
+    AuthResponse
 }
