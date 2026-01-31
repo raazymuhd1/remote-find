@@ -19,6 +19,12 @@ const ProfileModal = ({showProfile, setShowProfile}: IProps) => {
             className="font-semibold p-[5px] hover:bg-(--light-green) text-[clamp(.7rem,1vmax,1rem)] hover:text-(--white) border-[1px] text-center border-(--light-green) rounded-[10px]  w-full"> 
             Profile 
         </Link>
+        <Link
+            onClick={() => setShowProfile(false)} 
+            to="/auth/signin" 
+            className="font-semibold p-[5px] hover:bg-(--light-green) text-[clamp(.7rem,1vmax,1rem)] hover:text-(--white) border-[1px] text-center border-(--light-green) rounded-[10px]  w-full"> 
+            Logout 
+        </Link>
     </section>
   )
 }

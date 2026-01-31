@@ -24,8 +24,8 @@ const Signup = () => {
     }
 
     useEffect(() => {
-        if(signupRes?.data) {
-            console.log(`data`, signupRes.data?.)
+        if(signupRes?.data?.token) {
+            console.log(`data`, signupRes.data.token)
             navigate("/")
             return
         }
