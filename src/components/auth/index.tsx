@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react' 
 import { google } from '../../assets'
 import TextField from './TextField'
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate, useLocation } from 'react-router'
 import { useSigninMutation, useSignupMutation } from '../../redux/services/auth'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import type { UserForm } from '../../types'
@@ -13,25 +13,52 @@ const Signup = () => {
     const [ userSignup, signupRes] = useSignupMutation()
     const [userSignin, signinRes] = useSigninMutation()
     const navigate = useNavigate()
+    const location = useLocation()
   
     const handleFormSubmit: SubmitHandler<UserForm> = async(data: UserForm) => {
        console.log(`data ${data.username}`)
        try {
-           await userSignup(data).unwrap()
+           if(signup) {
+               await userSignup(data).unwrap()
+               return;
+           }
+
+           await userSignin({ email: data?.email, password: data?.password }).unwrap()
+           return;
        } catch(err) {
           console.log(`something wrong`, err)
        }
     }
 
     useEffect(() => {
-        if(signupRes?.data?.token) {
-            console.log(`data`, signupRes.data.token)
-            navigate("/")
+        function handleInitialAuth() {
+            if(location.pathname == "/auth/signup") {
+                goSignin(false)
+                goSignup(true)
+                return
+            } else if(location.pathname == "/auth/signin") {
+                goSignup(false)
+                goSignin(true)
+                return;
+            }
+
+        }
+
+        handleInitialAuth()
+    }, [location.pathname])
+
+    useEffect(() => {
+        if(signupRes?.data?.token || signinRes?.data?.token) {
+            console.log(`data`, signupRes?.data?.token)
+            console.log(`data`, signinRes?.data?.token)
+            setTimeout(() => {
+                navigate("/")
+            }, 2000)
             return
         }
 
-        console.log(`no signup data`)
-    }, [signupRes])
+        console.log(`no auth data`)
+    }, [signupRes, signinRes, navigate])
 
   return (
     <section className='auth_bg h-screen w-screen flex flex-col justify-center bg-(--light-white)'>

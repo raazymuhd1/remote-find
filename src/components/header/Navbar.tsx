@@ -31,7 +31,7 @@ const Navbar = () => {
             <aside className='md:flex hidden gap-[10px] items-center'>
                 <Bell className='w-[clamp(1.3rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)] ' />
                 <div 
-                    onMouseDown={() => setShowProfileModal(!showProfileModal)}
+                    onMouseEnter={() => setShowProfileModal(!showProfileModal)}
                     className='flex items-center gap-[5px] cursor-pointer relative'>
                     <img src={profile} alt="profile" className='object-cover w-[clamp(1.2rem,2vmax,2rem)] h-[clamp(1.2rem,2vmax,2rem)] rounded-[50%]' />
                     {
