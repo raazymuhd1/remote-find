@@ -8,9 +8,9 @@ const Jobs = () => {
     // const [jobs, setJobs] = useState('')
 
   return (
-    <section className='md:w-[85%] h-[90vh] overflow-y-auto w-full bg-(--light-white) md:p-[1.3rem] p-[.5rem]'>
+    <section className='md:w-[85%] h-[80vh] w-full bg-(--light-white) md:p-[1.3rem] p-[.5rem]'>
       {/* BANNER */}
-      <section className='flex flex-col gap-[1rem]'>
+      <section className='flex flex-col h-[30%] sticky top-0 gap-[1rem] z-0'>
           <div className='bg-(--light-green) flex flex-col gap-[2rem] p-[15px] w-full rounded-[15px]'>
               <div className='flex w-full flex-col'>
                 <h3 className='text-[clamp(1rem,2vmax,2rem)] font-bold text-(--white)'> Discover your ideal career right here! </h3>
@@ -30,7 +30,7 @@ const Jobs = () => {
 
 
       {/* jobs card */}
-      <article className='mt-[1rem] w-full overflow-y-auto md:p-[1rem] p-[.5rem]'>
+      <article className='mt-[1rem] w-full h-[70%] mt-[3rem] overflow-y-scroll md:p-[1rem] p-[.5rem]'>
         <JobCard setShowDetails={setShowDetails} />
       </article>
 

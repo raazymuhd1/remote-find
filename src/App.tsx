@@ -9,11 +9,10 @@ function App() {
   const [showSidebar, setShowSidebar] = useState(false)
   const location = useLocation()
 
-
   return (
     <>
       <Header />
-      <main className='w-full h-[90vh] flex md:flex-row flex-col'>
+      <main className='w-full h-full flex md:flex-row flex-col'>
         {/* sidebar */}
         <Sidebar isMobileScreen={false} />
         {/* sidebar triggers on mobile screen */}
@@ -32,13 +31,11 @@ function App() {
 
         <Routes>
           <Route path='/auth/*' element={<Auth />} />
-          {/* <Route path='/auth/signin' element={<Auth />} /> */}
           <Route path='/' index={true} element={<FindJobs />} />
           <Route path='/upload-jobs' element={<UploadJobs />} />
           <Route path='/user/profile' element={<UserProfile />} />
         </Routes>
 
-        {/*  */}
       </main>
     </>
   )

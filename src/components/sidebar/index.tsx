@@ -42,7 +42,7 @@ const Sidebar = ({isMobileScreen}: IProps) => {
   return (
     <aside 
         onClick={e => e.stopPropagation()}
-        className={`${location.pathname == "/auth/signup" || location.pathname == "/user/profile" || location.pathname == "/auth/signin" ? "w-0 h-0" : "lg:w-[15%] md:w-[25%] w-[70%] h-full p-[1.5rem]" } sidebar sticky inset-0 overflow-y-auto bg-(--white) flex-col ${isMobileScreen ? "md:hidden flex" : "md:flex hidden"} gap-5 border-r-[1px] border-r-(--grey)`}>
+        className={`${location.pathname == "/auth/signup" || location.pathname == "/user/profile" || location.pathname == "/auth/signin" ? "w-0 h-0" : "lg:w-[15%] md:w-[25%] w-[70%] h-screen p-[1.5rem]" } sidebar sticky inset-0 overflow-y-auto bg-(--white) flex-col ${isMobileScreen ? "md:hidden flex" : "md:flex hidden"} gap-5 border-r-[1px] md:z-0 z-[9] border-r-(--grey)`}>
         <div className='w-full flex items-center justify-between border-b-[1px] border-b-(--border-col) pb-[.7rem]'>
             <h3 className='text-[clamp(1rem,1.3vmax,1.3rem)] font-bold'> Filter </h3>
             <strong className='text-[red] cursor-pointer text-[clamp(.8rem,1vmax,1rem)]'> Reset </strong>
