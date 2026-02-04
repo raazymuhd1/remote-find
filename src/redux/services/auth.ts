@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { User, AuthResponse } from "../../types";
+import type { AuthResponse } from "../../types";
 
 interface UserAuthData {
     username: string;
