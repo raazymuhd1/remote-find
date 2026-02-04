@@ -11,6 +11,10 @@ export const jobApi = createApi({
             query: () => `/get-all`,
             transformResponse: (response: { data: Job[] }) => {
                 return response?.data
+            },
+            transformErrorResponse: (response) => {
+                console.log(`error response ${response.data}, status ${response.status}`)
+                return response.data
             }
         })
     })

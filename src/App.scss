@@ -23,6 +23,11 @@ body {
     @extend .glass_bg;
 }
 
+// HOMEPAGE STYLES.
+.job_card {
+    @extend .green_glass_bg;
+}
+
 // AUTH
 .auth_bg {
     position: relative;

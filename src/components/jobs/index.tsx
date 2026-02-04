@@ -2,13 +2,17 @@ import { useState } from 'react'
 import { Search, ArrowRight } from 'lucide-react'
 import JobCard from './JobCard'
 import JobDetails from './JobDetails'
+import { useGetAllJobsQuery } from '../../redux/services/job'
 
 const Jobs = () => {
     const [showDetails, setShowDetails] = useState(false)
+    const {data: jobsData} = useGetAllJobsQuery()
     // const [jobs, setJobs] = useState('')
 
+    console.log("jobs", jobsData)
+
   return (
-    <section className='md:w-[85%] h-[80vh] w-full bg-(--light-white) md:p-[1.3rem] p-[.5rem]'>
+    <section className='md:w-[85%] h-[80vh] w-full md:p-[1.3rem] p-[.5rem]'>
       {/* BANNER */}
       <section className='flex flex-col h-[30%] sticky top-0 gap-[1rem] z-0'>
           <div className='bg-(--light-green) flex flex-col gap-[2rem] p-[15px] w-full rounded-[15px]'>
@@ -25,13 +29,15 @@ const Jobs = () => {
               </div>
           </div>
 
-          <h4 className='text-[clamp(1rem,1.1vmax,1.1rem)] font-semibold'> 250 Jobs Results </h4>
+          <h4 className='text-[clamp(1rem,1.1vmax,1.1rem)] font-semibold'> { jobsData?.length } Jobs Results </h4>
       </section>
 
 
       {/* jobs card */}
-      <article className='mt-[1rem] w-full h-[70%] mt-[3rem] overflow-y-scroll md:p-[1rem] p-[.5rem]'>
-        <JobCard setShowDetails={setShowDetails} />
+      <article className='mt-[1rem] w-full h-[90%] mt-[3rem] overflow-y-scroll overflow-x-hidden md:p-[1rem] p-[.5rem] grid grid-cols-[repeat(auto-fit,minmax(0,200px))] gap-[15px]'>
+        { jobsData?.map(job => (
+            <JobCard job={job} setShowDetails={setShowDetails} />
+        )) }
       </article>
 
       {/* job details modal */}
