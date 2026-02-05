@@ -8,3 +8,7 @@
 .input_field {
     @apply w-full p-[10px] border-[1px] border-(--border-col) rounded-[10px] placeholder:text-[clamp(.6rem,.8vmax,.8rem)];
 }
+
+.green_border {
+   @apply border-[1px] border-(--light-green);
+}

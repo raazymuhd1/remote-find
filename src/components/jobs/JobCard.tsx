@@ -12,7 +12,7 @@ const JobCard = ({ setShowDetails, job }: IProps) => {
   return (
     <section 
         key={job.id}
-        className={`p-[20px] h-[220px] basis-[200px] grow-1 flex flex-col justify-between gap-[1.3rem] rounded-[15px] border-[1px] border-(--light-green) hover:border-(--light-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
+        className={`p-[20px] h-[220px] basis-[200px] grow-1 flex flex-col justify-between gap-[1.3rem] rounded-[15px] green_border cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
         <div className='flex items-center w-full justify-between'>
             {/* company logo */}
             <img src={apple} alt="company-logo" className="rounded-[50%] w-[clamp(1.3rem,1.9vmax,1.9rem)] object-cover h-[clamp(1.3rem,1.9vmax,1.9rem)]" />
@@ -49,8 +49,8 @@ const JobCard = ({ setShowDetails, job }: IProps) => {
 
             <aside 
                 onClick={() => setShowDetails(true)}
-                className="border-[1px] border-(--light-green) py-[2px] px-[5px] rounded-[.7rem] hover:bg-(--light-green) transition-[background,1s,ease-in-out]">
-                <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-semibold text-(--light-green) hover:text-(--white)"> Details </h4>
+                className="border-[1px] border-(--light-green) py-[2px] px-[5px] rounded-[.7rem] bg-(--light-green) transition-[background,1s,ease-in-out]">
+                <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-semibold text-(--white)"> Details </h4>
             </aside>
         </div>
     </section>

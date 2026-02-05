@@ -25,60 +25,61 @@ const Profile = () => {
       <section 
          className='md:w-[90%] h-[90vh] w-full flex md:flex-row flex-col gap-[2rem] mx-auto p-[2rem] '>
          {/* profile sidebar */}
-         <aside className="flex w-full md:w-[30%] p-[.8rem] bg-(--white) rounded-[15px] gap-[1rem] flex-col sticky top-0 left-0 hover:border-(--light-green) border-[1px] border-(--white) transition-[border,1s,ease-in-out]">
+         <aside className="flex w-full md:w-[30%] p-[.8rem] bg-(--white) rounded-[15px] gap-[1rem] flex-col sticky top-0 left-0 hover:border-(--light-green) border-[1px] border-(--white) transition-[border,1s,ease-in-out] box_shadow">
 
-         <article className="w-full flex flex-col gap-[1rem]">
-               <div className="flex flex-col gap-[5px]">
-                  <img src={profile} alt="profile-img" className="rounded-[50%] object-cover w-[clamp(50px,2vmax,60px)] h-[clamp(50px,2vmax,60px)]" />
-                  <h2 className="font-bold text-[clamp(1rem,1.2vmax,1.2rem)]"> Raazy Dev </h2>
-                  <p className="text-[clamp(.8rem,1vmax,1rem)] text-(--grey)"> Jakarta, Indonesia </p>
-               </div>
+            <article className="w-full flex flex-col gap-[1rem]">
+                  <div className="flex flex-col gap-[5px]">
+                     <img src={profile} alt="profile-img" className="rounded-[50%] object-cover w-[clamp(50px,2vmax,60px)] h-[clamp(50px,2vmax,60px)]" />
+                     <h2 className="font-bold text-[clamp(1rem,1.2vmax,1.2rem)]"> Raazy Dev </h2>
+                     <p className="text-[clamp(.8rem,1vmax,1rem)] text-(--grey)"> Jakarta, Indonesia </p>
+                  </div>
 
-               {/* user details */}
-               <div className="w-full flex flex-col gap-[5px]">
-                  { userDetails.map(detail => (
-                     <div key={detail.id} className="flex items-center gap-[1rem] justify-between w-full">
-                        <p className="text-[clamp(.8rem,1vmax,1rem)] whitespace-nowrap text-(--grey)"> { detail.title } </p>
-                        <aside 
-                           // onMouseEnter={() => setShowEditBtn(true)}
-                           // onMouseLeave={() => setShowEditBtn(false)}
-                           className={`w-[50%] flex items-center gap-[.6rem]`}>
-                           <strong className="text-[clamp(.8rem,1vmax,1rem)]"> {detail.value} </strong>
-                           <input type="text" className={`hidden p-[8px] rounded-[5px] w-full`} />
-                           {/* <h4 className={`text-[clamp(.8rem,1vmax,1rem)] cursor-pointer ${showEditBtn ? "opacity-[1]" : "opacity-[0]"}`}> Edit </h4> */}
-                        </aside>
-                     </div>
-                  )) }
-               </div>
+                  {/* user details */}
+                  <div className="w-full flex flex-col gap-[5px]">
+                     { userDetails.map(detail => (
+                        <div key={detail.id} className="flex items-center gap-[1rem] justify-between w-full">
+                           <p className="text-[clamp(.8rem,1vmax,1rem)] whitespace-nowrap text-(--grey)"> { detail.title } </p>
+                           <aside 
+                              // onMouseEnter={() => setShowEditBtn(true)}
+                              // onMouseLeave={() => setShowEditBtn(false)}
+                              className={`w-[50%] flex items-center gap-[.6rem]`}>
+                              <strong className="text-[clamp(.8rem,1vmax,1rem)]"> {detail.value} </strong>
+                              <input type="text" className={`hidden p-[8px] rounded-[5px] w-full`} />
+                              {/* <h4 className={`text-[clamp(.8rem,1vmax,1rem)] cursor-pointer ${showEditBtn ? "opacity-[1]" : "opacity-[0]"}`}> Edit </h4> */}
+                           </aside>
+                        </div>
+                     )) }
+                  </div>
 
-               {/* email & phone */}
-               <aside className="w-full flex flex-col gap-[5px]">
-                     <div className="flex w-full gap-[10px] items-center">
-                        <Mail className="w-[clamp(1.2rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)]" />
-                        <p className="text-[clamp(.8rem,1vmax,1rem)]"> raazy.devs@gmail.com </p>
-                     </div>
-               </aside>
-               
-               {/* buttons */}
-               <aside className="flex lg:flex-no-wrap flex-wrap gap-[.6rem] w-full">
-                     <button 
-                        onClick={() => updateProfile(true)}
-                        className="profile_buttons"> Update </button>
-                     <button className="profile_buttons"> Upload Resume </button>
-               </aside>
+                  {/* email & phone */}
+                  <aside className="w-full flex flex-col gap-[5px]">
+                        <div className="flex w-full gap-[10px] items-center">
+                           <Mail className="w-[clamp(1.2rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)]" />
+                           <p className="text-[clamp(.8rem,1vmax,1rem)]"> raazy.devs@gmail.com </p>
+                        </div>
+                  </aside>
+                  
+                  {/* buttons */}
+                  <aside className="flex lg:flex-no-wrap flex-wrap gap-[.6rem] w-full">
+                        <button 
+                           onClick={() => updateProfile(true)}
+                           className="profile_buttons"> Update </button>
+                        <button className="profile_buttons"> Upload Resume </button>
+                  </aside>
 
-         </article>
+            </article>
 
                {/* applied & saved jobs */}
-         <aside className="flex w-full justify-center md:flex-col flex-row gap-[.6rem] mt-[1.5rem]">
-                  { jobTabs.map(type => (
-                     <h4 className={`text-[clamp(.8rem,1vmax,1rem)] hover:bg-(--light-green) cursor-pointer hover:text-(--white) rounded-[5px] p-[10px] font-semibold ${type.isActive && "bg-(--light-green) text-(--white)"}`}> {type.title} ({type.total}) </h4>
-                  )) }
-               </aside>
+            <aside className="flex w-full justify-center md:flex-col flex-row gap-[.6rem] mt-[1.5rem]">
+                     { jobTabs.map(type => (
+                        <h4 className={`text-[clamp(.8rem,1vmax,1rem)] hover:bg-(--light-green) cursor-pointer hover:text-(--white) rounded-[5px] p-[10px] font-semibold ${type.isActive && "bg-(--light-green) text-(--white)"}`}> {type.title} ({type.total}) </h4>
+                     )) }
+            </aside>
+
          </aside>
 
          {/* profile jobs */}
-         <aside className="w-full flex flex-col gap-[1.4rem] md:w-[70%] p-[2rem] bg-(--white) overflow-x-auto rounded-[15px] md:h-full md:mt-0 mt-[.5rem] h-[30rem] hover:border-(--light-green) border-[1px] border-(--white) transition-[border,1s,ease-in-out]">
+         <aside className="w-full flex flex-col gap-[1.4rem] md:w-[70%] p-[2rem] bg-(--white) overflow-x-auto rounded-[15px] md:h-full md:mt-0 mt-[.5rem] h-[30rem] hover:border-(--light-green) border-[1px] border-(--white) transition-[border,1s,ease-in-out] box_shadow">
                <div className="flex w-full hover:translate-y-[-2px] transition-[all,1s,ease-in-out] cursor-pointer flex-col gap-[1rem] border-[1px] border-(--border-col) p-[.5rem] bg-(--light-white) rounded-[15px] hover:border-(--light-green)">
                {/* top detail */}
                   <div className="flex w-full justify-between">
