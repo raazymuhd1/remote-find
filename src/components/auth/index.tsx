@@ -17,6 +17,7 @@ const Signup = () => {
   
     const handleFormSubmit: SubmitHandler<UserForm> = async(data: UserForm) => {
        console.log(`data ${data.username}`)
+
        try {
            if(signup) {
                await userSignup(data).unwrap()
@@ -48,9 +49,14 @@ const Signup = () => {
     }, [location.pathname])
 
     useEffect(() => {
+        const sessionStore = window.sessionStorage;
+
         if(signupRes?.data?.token || signinRes?.data?.token) {
             console.log(`data`, signupRes?.data?.token)
             console.log(`data`, signinRes?.data?.token)
+            if(!sessionStore.getItem("user")) {
+                sessionStore.setItem("user", JSON.stringify({ userId: signupRes.data?.user.id ?? signinRes?.data?.user?.id, token: signupRes?.data?.token ?? signinRes?.data?.token  }))
+            }
             setTimeout(() => {
                 navigate("/")
             }, 2000)

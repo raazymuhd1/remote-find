@@ -3,13 +3,23 @@ import { Search, ArrowRight } from 'lucide-react'
 import JobCard from './JobCard'
 import JobDetails from './JobDetails'
 import { useGetAllJobsQuery } from '../../redux/services/job'
+import { useGetUserQuery } from '../../redux/services/user'
+
+interface ISession {
+  userId: number;
+  token: string;
+}
+
+const sessionData = window.sessionStorage.getItem("user")
+const parsedSessionData: ISession = sessionData ? JSON.parse(sessionData) : sessionData
 
 const Jobs = () => {
     const [showDetails, setShowDetails] = useState(false)
     const {data: jobsData} = useGetAllJobsQuery()
+    const {data: user} = useGetUserQuery(parsedSessionData?.userId)
     // const [jobs, setJobs] = useState('')
 
-    console.log("jobs", jobsData)
+    console.log("user", user)
 
   return (
     <section className='md:w-[85%] h-[80vh] w-full md:p-[1.3rem] p-[.5rem]'>
