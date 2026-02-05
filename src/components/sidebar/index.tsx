@@ -21,21 +21,19 @@ const Sidebar = ({isMobileScreen}: IProps) => {
     const location = useLocation()
 
     const handleFilterTabs = (filterTabs: FilterTab[], tabId: number, updateFilterTab: (data: FilterTab[]) => void) => {
-        const tabs = [...filterTabs]
-
-
-        const tabsFilter = tabs.map(tab => {
+        const tabs: FilterTab[] = [...filterTabs]
+        
+        tabs.forEach(tab => {
             if(tab.id == tabId) {
                 tab.isActive = true
-                return
-            }
-
-            tab.isActive = false;
-            return tab;
+                console.log("tabId", tabId)
+                 return
+             }
+    
+             tab.isActive = false;
         })
-
-        console.log(`tabsFilter`, tabsFilter)
-        updateFilterTab(tabs)
+        
+         updateFilterTab(tabs)
     }
 
 
@@ -63,10 +61,12 @@ const Sidebar = ({isMobileScreen}: IProps) => {
             <div className='w-[80%] flex flex-wrap gap-y-[.7rem] gap-x-[1.5rem]'>
                 { positions.map(location => (
                     <div 
-                        onClick={() => handleFilterTabs(positions, location.id, setPositions)}
-                        key={location.id} className='flex items-center gap-[5px]'>
-                        <aside className={`w-max h-max bg-(--light-green) rounded-[5px] p-[3px]`}>
-                            <Check className='w-[clamp(.8rem,1vmax,1rem)] h-[clamp(.8rem,1vmax,1rem)] text-(--white)' />
+                        onClick={() => {
+                            handleFilterTabs(positions, location.id, setPositions)
+                        }}
+                        key={location.id} className='flex items-center gap-[5px] cursor-pointer'>
+                        <aside className={`bg-(--light-green) border-[1px] border-(--border-col) h-[15px] w-[15px] ${location.isActive ? "bg-(--light-green)" : "bg-transparent"}`}>
+                            <Check className={`w-[clamp(.8rem,1vmax,1rem)] h-[clamp(.8rem,1vmax,1rem)] text-(--white) ${location.isActive ? "block" : "hidden"}`} />
                         </aside>
                         <p className='text-[clamp(.8rem,1vmax,1rem)]'> {location.title} </p>
                     </div>
