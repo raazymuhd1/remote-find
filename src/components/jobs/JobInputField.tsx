@@ -9,9 +9,15 @@ interface IProps {
 
 const JobInputField = ({ label, type, htmlFor, placeholder, inputStyles }: IProps) => {
   return (
-    <div className='flex flex-col gap-[10px]'>
-        <label htmlFor={htmlFor}> {label} </label>
-        <input type={type} placeholder={placeholder} className={`${inputStyles} input_field`} />
+    <div className='flex flex-col gap-[5px]'>
+        <label 
+            className="font-semibold text-[clamp(.8rem,1vmax,1rem)] cursor-pointer"
+            htmlFor={htmlFor}> {label} </label>
+        <input 
+            id={htmlFor}
+            type={type}
+            placeholder={placeholder}
+            className={`${inputStyles} input_field placeholder:tracking-wide`} />
     </div>
   )
 }

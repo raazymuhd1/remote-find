@@ -1,0 +1,16 @@
+@mixin scrollbar_styles($el) {
+    .#{$el}::-webkit-scrollbar {
+    width: 2px;
+    background-color: var(--white);
+    }
+
+    .#{$el}::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: var(--light-green);
+    border-radius: 10px;
+    }
+
+    .#{$el}::-webkit-scrollbar-button {
+    background-color: var(--dark-red);
+    }
+}

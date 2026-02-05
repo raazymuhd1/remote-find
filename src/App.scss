@@ -1,5 +1,6 @@
 @use "styles/colors" as cols;
 @use "styles/glass";
+@use "styles/scrollbar" as scrollbar;
 
 :root {
     --white: #fffeff;
@@ -33,6 +34,22 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-button {
     background-color: var(--dark-red);
 }
+
+@include scrollbar.scrollbar_styles(scroll);
+
+.box_shadow {
+    box-shadow: 2px 2px 46px 1px #dfdbdb, -2px -2px 46px 1px #dfdbdb;
+}
+
+.button_shadow {
+    box-shadow: 0px 0px 46px 1px var(--light-green), 12px 12px 46px 1px var(--light-green);
+}
+
+// POST JOB STYLES
+.post_job::-webkit-scrollbar {
+    width: 0;
+}
+
 
 // NAVBAR STYLES
 .mobile_links {

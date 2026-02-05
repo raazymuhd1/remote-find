@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { links } from '../../constants'
 import { Link } from 'react-router'
 import { Bell, ChevronDown, ChevronUp, Menu } from 'lucide-react'
@@ -10,6 +10,18 @@ const Navbar = () => {
     const location = useLocation()
     const [showMobileMenu, setShowMobileMenu] = useState(false)
     const [showProfileModal, setShowProfileModal] = useState(false)
+    const linkRef = useRef<HTMLAnchorElement>(null)
+
+    const handleLinkActiveShadow = (isActive: boolean) => {
+        const link = linkRef?.current
+
+        if(isActive && link) {
+            link?.classList?.add("button_shadow")
+            return;
+        } else {
+            link?.classList.remove("button_shadow")
+        }
+    }
 
   return (
     <nav className='w-full h-full flex items-center justify-between'>
@@ -21,7 +33,10 @@ const Navbar = () => {
         <aside className='w-[60%] flex items-center justify-between'>
             <ul className='md:flex hidden gap-[10px]'>
                 { links.map(link => (
-                    <Link to={link.url} 
+                    <Link 
+                        ref={linkRef}
+                        to={link.url} 
+                        onClick={() => handleLinkActiveShadow(link.url == location?.pathname ? true : false)}
                         className={`text-[clamp(1rem,1.1vmax,1.2rem)] py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--light-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--light-green) font-semibold`}>
                         { link.title }
                     </Link>
