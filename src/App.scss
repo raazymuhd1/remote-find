@@ -45,6 +45,10 @@ body {
     background-color: #504e4ed5;
 }
 
+.auth_shadows {
+    box-shadow: 2px 2px 46px 1px #dfdbdb, -2px -2px 46px 1px #dfdbdb;
+}
+
 // SIDEBAR STYLES
 
 .sidebar::-webkit-scrollbar {
@@ -71,7 +75,7 @@ body {
 }
 
 
-// AUTH styles
-.auth_shadows {
-    box-shadow: 2px 2px 46px 1px #dfdbdb, -2px -2px 46px 1px #dfdbdb;
+// PROFILES
+.update_Profile_modals {
+    @extend .glass_bg;
 }
