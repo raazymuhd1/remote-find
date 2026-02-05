@@ -1,5 +1,6 @@
 export { default as Header } from "./header"
 export { default as Sidebar } from "./sidebar"
 export { default as Jobs } from "./jobs"
+export { default as CreateJob } from "./jobs/CreateJob"
 export { default as Profile } from "./profile"
 export { default as Signup } from "./auth"

@@ -23,10 +23,10 @@ const jobFilter = {
     { id: 4, title: "Contract", isActive: false },
     ],
     salaryRange: [
-    { id: 1, value: "$1k-$2k", isActive: true },
-    { id: 2, value: "$3k-$4k", isActive: false },
-    { id: 3, value: "$5k-$6k", isActive: false },
-    { id: 4, value: "Custom", isActive: false },
+    { id: 1, title: "$1k-$2k", isActive: true },
+    { id: 2, title: "$3k-$4k", isActive: false },
+    { id: 3, title: "$5k-$6k", isActive: false },
+    { id: 4, title: "Custom", isActive: false },
     ],
     roles: [
         { id: 1, title: "Product Designer", isActive: true },

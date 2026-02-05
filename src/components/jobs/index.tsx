@@ -22,7 +22,7 @@ const Jobs = () => {
               </div>
               <div className='md:w-[80%] w-full flex items-center gap-[10px] rounded-[2rem] p-[5px] border-[1px] bg-(--white) border-(--border-col)'>
                 <Search className='w-[clamp(1rem,1.3vmax,1.3rem)] h-[clamp(1rem,1.3vmax,1.3rem)]' />
-                <input type="text" className='placeholder:text-(--grey) w-[95%] h-full focus:outline-0' placeholder='Search Jobs' />
+                <input type="text" className='placeholder:text-(--grey) w-[95%] h-full focus:outline-0' placeholder='Search Jobs by role, company, or salary' />
                 <aside className='rounded-[50%] w-max p-[5px] bg-(--light-green)'>
                     <ArrowRight className='w-[clamp(1rem,1.3vmax,1.3rem)] h-[clamp(1rem,1.3vmax,1.3rem)] text-(--white)'  />
                 </aside>
@@ -34,7 +34,7 @@ const Jobs = () => {
 
 
       {/* jobs card */}
-      <article className='mt-[1rem] w-full h-[90%] mt-[1rem] overflow-y-scroll overflow-x-hidden md:p-[1rem] p-[.5rem] flex flex-wrap gap-[15px]'>
+      <article className='w-full h-[90%] mt-[.5rem] overflow-y-scroll overflow-x-hidden md:p-[1rem] p-[.5rem] flex flex-wrap gap-[15px]'>
         { jobsData?.map(job => (
             <JobCard job={job} setShowDetails={setShowDetails} />
         )) }

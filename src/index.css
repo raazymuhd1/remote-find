@@ -5,6 +5,6 @@
     @apply px-[10px] py-[3px] rounded-[10px] md:w-[150px] w-full bg-(--light-green) font-semibold text-(--white) cursor-pointer hover:opacity-[.7] transition-[opacity,1s,ease-in-out] whitespace-nowrap;
 }
 
-.update_profile_input {
+.input_field {
     @apply w-full p-[10px] border-[1px] border-(--border-col) rounded-[10px] placeholder:text-[clamp(.6rem,.8vmax,.8rem)];
 }

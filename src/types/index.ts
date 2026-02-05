@@ -23,7 +23,7 @@ interface JobDetail {
     position: string;
     type: string;
     salaryRange: string;
-    jobId: string;
+    jobId?: string;
 }
 
 type User = {

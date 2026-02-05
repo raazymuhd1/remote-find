@@ -19,7 +19,7 @@ const Navbar = () => {
 
         {/* links (desktop size) */}
         <aside className='w-[60%] flex items-center justify-between'>
-            <ul className='md:flex hidden gap-[20px]'>
+            <ul className='md:flex hidden gap-[10px]'>
                 { links.map(link => (
                     <Link to={link.url} 
                         className={`text-[clamp(1rem,1.1vmax,1.2rem)] py-[5px] px-[10px] ${link.url == location?.pathname && "bg-(--light-green) text-(--white) rounded-[10px]"} hover:text-(--white) hover:rounded-[10px] transition-[all,1s,ease-in-out] hover:bg-(--light-green) font-semibold`}>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <aside 
                 onClick={(e) => e.stopPropagation()}
                 className='w-full h-[30%] bg-(--white) flex gap-[1rem] flex-col-reverse items-center justify-center rounded-bl-[10px] rounded-br-[10px]'>
-                <ul className='flex w-full flex-col items-center gap-[20px]'>
+                <ul className='flex w-full flex-col items-center gap-[10px]'>
                     { links.map(link => (
                         <Link 
                             onClick={() => setShowMobileMenu(false)}
