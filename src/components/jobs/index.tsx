@@ -34,7 +34,7 @@ const Jobs = () => {
 
 
       {/* jobs card */}
-      <article className='mt-[1rem] w-full h-[90%] mt-[1rem] overflow-y-scroll overflow-x-hidden md:p-[1rem] p-[.5rem] grid grid-cols-[repeat(auto-fit,minmax(0,200px))] gap-[15px]'>
+      <article className='mt-[1rem] w-full h-[90%] mt-[1rem] overflow-y-scroll overflow-x-hidden md:p-[1rem] p-[.5rem] flex flex-wrap gap-[15px]'>
         { jobsData?.map(job => (
             <JobCard job={job} setShowDetails={setShowDetails} />
         )) }

@@ -40,12 +40,12 @@ const Profile = () => {
                      <div key={detail.id} className="flex items-center gap-[1rem] justify-between w-full">
                         <p className="text-[clamp(.8rem,1vmax,1rem)] whitespace-nowrap text-(--grey)"> { detail.title } </p>
                         <aside 
-                           onMouseEnter={() => setShowEditBtn(true)}
-                           onMouseLeave={() => setShowEditBtn(false)}
+                           // onMouseEnter={() => setShowEditBtn(true)}
+                           // onMouseLeave={() => setShowEditBtn(false)}
                            className={`w-[50%] flex items-center gap-[.6rem]`}>
                            <strong className="text-[clamp(.8rem,1vmax,1rem)]"> {detail.value} </strong>
                            <input type="text" className={`hidden p-[8px] rounded-[5px] w-full`} />
-                           <h4 className={`text-[clamp(.8rem,1vmax,1rem)] cursor-pointer ${showEditBtn ? "opacity-[1]" : "opacity-[0]"}`}> Edit </h4>
+                           {/* <h4 className={`text-[clamp(.8rem,1vmax,1rem)] cursor-pointer ${showEditBtn ? "opacity-[1]" : "opacity-[0]"}`}> Edit </h4> */}
                         </aside>
                      </div>
                   )) }

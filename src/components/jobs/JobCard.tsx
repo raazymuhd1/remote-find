@@ -12,7 +12,7 @@ const JobCard = ({ setShowDetails, job }: IProps) => {
   return (
     <section 
         key={job.id}
-        className={`p-[20px] flex flex-col gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--light-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
+        className={`p-[20px] h-[220px] basis-[200px] grow-1 flex flex-col justify-between gap-[1.3rem] rounded-[15px] border-[1px] border-(--border-col) hover:border-(--light-green) cursor-pointer bg-(--white) transition-[margin,border,2s,ease-in-out] hover:translate-y-[-3px]`}>
         <div className='flex items-center w-full justify-between'>
             {/* company logo */}
             <img src={apple} alt="company-logo" className="rounded-[50%] w-[clamp(1.3rem,1.9vmax,1.9rem)] object-cover h-[clamp(1.3rem,1.9vmax,1.9rem)]" />
@@ -30,7 +30,7 @@ const JobCard = ({ setShowDetails, job }: IProps) => {
                     </div>
 
                 </div>
-                <h3 className="font-semibold"> { job?.role } </h3>
+                <h3 className="font-semibold text-[clamp(.6rem,.8vmax,.8rem)] whitespace-nowrap"> { job?.role } </h3>
             </aside>
 
             {/* job types & location */}
@@ -49,7 +49,7 @@ const JobCard = ({ setShowDetails, job }: IProps) => {
 
             <aside 
                 onClick={() => setShowDetails(true)}
-                className="border-[1px] border-(--light-green) p-[5px] rounded-[.7rem] hover:bg-(--light-green) transition-[background,1s,ease-in-out]">
+                className="border-[1px] border-(--light-green) py-[2px] px-[5px] rounded-[.7rem] hover:bg-(--light-green) transition-[background,1s,ease-in-out]">
                 <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-semibold text-(--light-green) hover:text-(--white)"> Details </h4>
             </aside>
         </div>
