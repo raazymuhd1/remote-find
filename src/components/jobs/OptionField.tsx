@@ -28,7 +28,7 @@ const OptionField = ({label, htmlFor, options}: Props) => {
             <h4 className='w-full cursor-pointer font-semibold'> { selectedValue || options[0].value } </h4>
             <div 
                 onClick={(e) => e.stopPropagation()}
-                className={`absolute flex flex-col gap-[4px] rounded-[10px] green_border bg-(--light-green) ${showOptions ? "opacity-[1] translate-y-[40px] h-[130px] translate-x-[-10px]" : "opacity-[0] h-0 w-0 translate-y-[0] translate-x-[-10px]"} w-full top-0 transition-[opacity,height,transform,1s,ease-in-out] z-[9]`}>
+                className={`absolute flex flex-col gap-[4px] rounded-[10px] green_border bg-(--light-green) ${showOptions ? "opacity-[1] translate-y-[40px] h-[130px] translate-x-[-10px]" : "opacity-[0] h-0 w-0 translate-y-[0] translate-x-[-10px]"} w-full top-0 transition-[opacity,height,transform,1s,ease-in-out] z-[1]`}>
                 { options.length > 0 && options.map(option => (
                     <h3 
                         key={option.id}

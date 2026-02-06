@@ -8,7 +8,7 @@ const CreateJob = () => {
   return (
     <section className="w-[90%] mx-auto bg-(--light-white) h-[80vh] flex flex-col items-center justify-center bg-(--white))">
         <article className="w-[35%] post_job h-[85%] mt-[2rem] overflow-y-auto rounded-[1.1rem] flex flex-col items-center gap-[1rem] bg-(--white) border-[1px] border-(--light-green) box_shadow">
-            <h2 className='text-[clamp(1rem,1.5vmax,1.5rem)] p-[2rem] sticky top-0 h-[60px] bg-(--white) w-full text-center font-bold'> Post Job </h2>
+            <h2 className='text-[clamp(1rem,1.5vmax,1.5rem)] p-[2rem] sticky top-0 h-[60px] bg-(--white) w-full text-center font-bold z-[2]'> Post Job </h2>
             <div className='flex flex-col gap-[.6rem] p-[2rem] w-full'> 
                 <JobInputField {
                   ...{
