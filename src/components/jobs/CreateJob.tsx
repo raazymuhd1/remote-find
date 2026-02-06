@@ -1,6 +1,8 @@
 import JobInputField from "./JobInputField"
 import JobTextAreaField from "./JobTextAreaField"
 import OptionField from "./OptionField"
+import { createJobOptions } from "../../constants"
+
 
 const CreateJob = () => {
   return (
@@ -13,7 +15,7 @@ const CreateJob = () => {
                     label: "Company Name",
                     type: "text",
                     htmlFor: "company-name",
-                    placeholder: "Company name"
+                    placeholder: "e.g Apple"
                   }
                 } />
                 <JobInputField {
@@ -21,7 +23,7 @@ const CreateJob = () => {
                     label: "Role",
                     type: "text",
                     htmlFor: "role",
-                    placeholder: "Role"
+                    placeholder: "e.g Fullstack Developer"
                   }
                 } />
                 <JobInputField {
@@ -37,15 +39,34 @@ const CreateJob = () => {
                     label: "Location",
                     type: "text",
                     htmlFor: "location",
-                    placeholder: "Location"
+                    placeholder: "e.g Jakarta, Indonesia"
                   }
                 } />
-                {/* position option */}
                 {/* location option */}
                 {/* type option */}
-                {/* salary range option */}
-                <OptionField />
-
+                <OptionField 
+                  { ...{
+                     label: "Position",
+                     htmlFor: "position",
+                     options: createJobOptions.jobLocation
+                  } }
+                />
+                <OptionField 
+                  { ...{
+                     label: "Job Types",
+                     htmlFor: "job-types",
+                     options: createJobOptions.jobTypes
+                  } }
+                />
+                {/* salary input */}
+                <JobInputField {
+                  ...{
+                    label: "Salary",
+                    type: "text",
+                    htmlFor: "salary",
+                    placeholder: "e.g $1k/monthly"
+                  }
+                } />
                 <JobTextAreaField
                   {
                     ...{

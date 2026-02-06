@@ -37,7 +37,22 @@ const jobFilter = {
     ]
 }
 
+const createJobOptions = {
+    jobLocation: [
+    { id: 1, value: "On Site"},
+    { id: 2, value: "Remote" },
+    { id: 3, value: "Hybrid" },
+    ],
+    jobTypes: [
+    { id: 1, value: "Fulltime"},
+    { id: 2, value: "Part time" },
+    { id: 3, value: "Freelance" },
+    { id: 4, value: "Contract" },
+    ]
+}
+
 export {
     links,
-    jobFilter
+    jobFilter,
+    createJobOptions
 }
