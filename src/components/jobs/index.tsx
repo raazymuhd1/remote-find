@@ -10,13 +10,13 @@ interface ISession {
   token: string;
 }
 
-const sessionData = window.sessionStorage.getItem("user")
-const parsedSessionData: ISession = sessionData ? JSON.parse(sessionData) : sessionData
 
 const Jobs = () => {
     const [showDetails, setShowDetails] = useState(false)
-    const {data: jobsData} = useGetAllJobsQuery()
+    const sessionData = window.sessionStorage.getItem("user")
+    const parsedSessionData: ISession = sessionData ? JSON.parse(sessionData) : sessionData
     const {data: user} = useGetUserQuery(parsedSessionData?.userId)
+    const {data: jobsData} = useGetAllJobsQuery(parsedSessionData?.token)
     // const [jobs, setJobs] = useState('')
 
     console.log("user", user)

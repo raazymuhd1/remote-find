@@ -7,8 +7,14 @@ export const jobApi = createApi({
     reducerPath: "jobApi",
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
-        getAllJobs: builder.query<Job[], void>({
-            query: () => `/get-all`,
+        getAllJobs: builder.query<Job[], string>({
+            query: (userToken) => ({
+                url: `/get-all`,
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${userToken}`
+                }
+            }),
             transformResponse: (response: { data: Job[] }) => {
                 return response?.data
             },
