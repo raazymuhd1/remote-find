@@ -35,10 +35,11 @@ type User = {
     postedJobs?: Job[];
     savedJobs?: Job[];
     appliedJobs?: Job[];
-    recentJob: Job;
+    recentJob: string;
     workAt: string;
     experience: string;
     resident: string;
+    qualification: string;
 }
 
 type UserForm = Omit<User, "id" | "jobs" | "picture">

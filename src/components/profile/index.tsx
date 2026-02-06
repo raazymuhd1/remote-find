@@ -5,11 +5,11 @@ import type { ISession } from "../../types"
 import UpdateProfileModal from "./UpdateProfileModal"
 import { useGetUserQuery } from "../../redux/services/user"
 
-const details = [
-  { id: 1, title: "Recent Job", value: "Apple" },
-  { id: 2, title: "Last Qualification", value: "B.Tech" },
-  { id: 3, title: "Work Experience", value: "4 Years" },
-]
+interface IDetail {
+   id: number;
+   title: string;
+   value: string;
+}
 
 const jobTypes = [
   { id: 1, title: "Saved Jobs", isActive: true, total: 0 },
@@ -18,15 +18,16 @@ const jobTypes = [
 
 const Profile = () => {
    //  const [showEditBtn, setShowEditBtn] = useState(false)
-    const [userDetails, ] = useState(details)
-    const [jobTabs,] = useState(jobTypes)
-    const [showProfileUpdate, updateProfile] = useState(false)
-    const sessionData = window.sessionStorage.getItem("user")
-   //  const parsedSessionData: ISession = sessionData ? JSON.parse(sessionData) : sessionData
-    const [parsedSessionData, ] = useState<ISession>(sessionData ? JSON.parse(sessionData) : sessionData)
-    const {data: user} = useGetUserQuery({ userId: parsedSessionData?.userId, userToken: parsedSessionData?.token })
-
-    console.log("user", user)
+   const [jobTabs,] = useState(jobTypes)
+   const [showProfileUpdate, updateProfile] = useState(false)
+   const sessionData = window.sessionStorage.getItem("user")
+   const [parsedSessionData, ] = useState<ISession>(sessionData ? JSON.parse(sessionData) : sessionData)
+   const {data: user} = useGetUserQuery({ userId: parsedSessionData?.userId, userToken: parsedSessionData?.token })
+   const [userDetails, ] = useState<IDetail[]>([
+     { id: 1, title: "Recent Job", value: user && user?.recentJob || "-" },
+     { id: 2, title: "Last Qualification", value: user && user?.qualification || "-" },
+     { id: 3, title: "Work Experience", value: user && user?.experience || "-" },
+     ])
 
   return (
    <>
@@ -39,13 +40,14 @@ const Profile = () => {
                   <div className="flex flex-col gap-[5px]">
                      <img src={profile} alt="profile-img" className="rounded-[50%] object-cover w-[clamp(50px,2vmax,60px)] h-[clamp(50px,2vmax,60px)]" />
                      <h2 className="font-bold capitalize text-[clamp(1rem,1.2vmax,1.2rem)]">  { user?.username } </h2>
-                     <p className="text-[clamp(.8rem,1vmax,1rem)] text-(--grey)"> Jakarta, Indonesia </p>
+                     <p className="text-[clamp(.8rem,1vmax,1rem)] text-(--grey)"> { user?.resident } </p>
                   </div>
 
                   {/* user details */}
                   <div className="w-full flex flex-col gap-[5px]">
                      { userDetails.map(detail => (
-                        <div key={detail.id} className="flex items-center gap-[1rem] justify-between w-full">
+                        <div 
+                           key={detail.id} className="flex items-center gap-[1rem] justify-between w-full">
                            <p className="text-[clamp(.8rem,1vmax,1rem)] whitespace-nowrap text-(--grey)"> { detail.title } </p>
                            <aside 
                               // onMouseEnter={() => setShowEditBtn(true)}
