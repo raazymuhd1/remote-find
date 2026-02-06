@@ -1,7 +1,9 @@
 import { useState } from "react"
-import { Mail, Phone } from "lucide-react"
+import { Mail } from "lucide-react"
 import { profile } from "../../assets"
+import type { ISession } from "../../types"
 import UpdateProfileModal from "./UpdateProfileModal"
+import { useGetUserQuery } from "../../redux/services/user"
 
 const details = [
   { id: 1, title: "Recent Job", value: "Apple" },
@@ -15,10 +17,16 @@ const jobTypes = [
 ]
 
 const Profile = () => {
-    const [showEditBtn, setShowEditBtn] = useState(false)
+   //  const [showEditBtn, setShowEditBtn] = useState(false)
     const [userDetails, ] = useState(details)
     const [jobTabs,] = useState(jobTypes)
     const [showProfileUpdate, updateProfile] = useState(false)
+    const sessionData = window.sessionStorage.getItem("user")
+   //  const parsedSessionData: ISession = sessionData ? JSON.parse(sessionData) : sessionData
+    const [parsedSessionData, ] = useState<ISession>(sessionData ? JSON.parse(sessionData) : sessionData)
+    const {data: user} = useGetUserQuery({ userId: parsedSessionData?.userId, userToken: parsedSessionData?.token })
+
+    console.log("user", user)
 
   return (
    <>
@@ -30,7 +38,7 @@ const Profile = () => {
             <article className="w-full flex flex-col gap-[1rem]">
                   <div className="flex flex-col gap-[5px]">
                      <img src={profile} alt="profile-img" className="rounded-[50%] object-cover w-[clamp(50px,2vmax,60px)] h-[clamp(50px,2vmax,60px)]" />
-                     <h2 className="font-bold text-[clamp(1rem,1.2vmax,1.2rem)]"> Raazy Dev </h2>
+                     <h2 className="font-bold capitalize text-[clamp(1rem,1.2vmax,1.2rem)]">  { user?.username } </h2>
                      <p className="text-[clamp(.8rem,1vmax,1rem)] text-(--grey)"> Jakarta, Indonesia </p>
                   </div>
 
@@ -43,7 +51,7 @@ const Profile = () => {
                               // onMouseEnter={() => setShowEditBtn(true)}
                               // onMouseLeave={() => setShowEditBtn(false)}
                               className={`w-[50%] flex items-center gap-[.6rem]`}>
-                              <strong className="text-[clamp(.8rem,1vmax,1rem)]"> {detail.value} </strong>
+                              <strong className="text-[clamp(.8rem,1vmax,1rem)]"> {detail.value || "-"} </strong>
                               <input type="text" className={`hidden p-[8px] rounded-[5px] w-full`} />
                               {/* <h4 className={`text-[clamp(.8rem,1vmax,1rem)] cursor-pointer ${showEditBtn ? "opacity-[1]" : "opacity-[0]"}`}> Edit </h4> */}
                            </aside>
@@ -55,7 +63,7 @@ const Profile = () => {
                   <aside className="w-full flex flex-col gap-[5px]">
                         <div className="flex w-full gap-[10px] items-center">
                            <Mail className="w-[clamp(1.2rem,1.5vmax,1.5rem)] h-[clamp(1.3rem,1.5vmax,1.5rem)]" />
-                           <p className="text-[clamp(.8rem,1vmax,1rem)]"> raazy.devs@gmail.com </p>
+                           <p className="text-[clamp(.8rem,1vmax,1rem)]"> { user?.email } </p>
                         </div>
                   </aside>
                   

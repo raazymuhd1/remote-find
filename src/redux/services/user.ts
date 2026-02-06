@@ -7,8 +7,14 @@ export const userApi = createApi({
     reducerPath: "userApi",
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
-        getUser: builder.query<User, number>({
-            query: (userId) => `/get-user/${userId}`,
+        getUser: builder.query<User, { userId: number, userToken: string }>({
+            query: (userData) => ({
+                url: `/get-user/${userData?.userId}`,
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${userData?.userToken}`
+                }
+            }),
             transformResponse: (response: { data: User }) => {
                 return response?.data
             },

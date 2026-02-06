@@ -1,5 +1,6 @@
 import JobInputField from "./JobInputField"
 import JobTextAreaField from "./JobTextAreaField"
+import OptionField from "./OptionField"
 
 const CreateJob = () => {
   return (
@@ -43,6 +44,7 @@ const CreateJob = () => {
                 {/* location option */}
                 {/* type option */}
                 {/* salary range option */}
+                <OptionField />
 
                 <JobTextAreaField
                   {

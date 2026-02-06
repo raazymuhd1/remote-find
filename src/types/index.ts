@@ -43,11 +43,17 @@ type AuthResponse = {
     msg?: string;
 }
 
+interface ISession {
+  userId: number;
+  token: string;
+}
+
 export type { 
     Link,
     Job,
     JobDetail,
     User,
     UserForm,
-    AuthResponse
+    AuthResponse,
+    ISession
 }
